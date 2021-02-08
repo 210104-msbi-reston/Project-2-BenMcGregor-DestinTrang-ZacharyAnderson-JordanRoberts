@@ -1,0 +1,6 @@
+﻿CREATE TABLE Zones(
+	Zone_ID INT PRIMARY KEY IDENTITY,
+	State_ID INT,
+
+	CONSTRAINT fk_Zones_States FOREIGN KEY(State_ID) REFERENCES States
+)

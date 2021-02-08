@@ -1,0 +1,6 @@
+﻿CREATE TABLE Order_Items(
+	Order_Item_ID INT PRIMARY KEY IDENTITY,
+	Item_Name VARCHAR(20),
+	Order_ID INT,
+	CONSTRAINT fk_OrderItems_Orders FOREIGN KEY(Order_ID) REFERENCES Orders
+)

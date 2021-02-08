@@ -1,0 +1,4 @@
+﻿
+--CREATE DATABASE P2PandexDB
+USE P2PandexDB
+GO
