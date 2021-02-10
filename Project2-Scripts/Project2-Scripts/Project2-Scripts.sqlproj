@@ -79,6 +79,7 @@
     <Build Include="dbo\Tables\Order_Item_Info.sql" />
     <Build Include="dbo\Views\vw_Drivers.sql" />
     <Build Include="dbo\Views\vw_Customers.sql" />
+    <Build Include="dbo\Views\vw_Company_PickupLocations.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Project2-Scripts.refactorlog" />
