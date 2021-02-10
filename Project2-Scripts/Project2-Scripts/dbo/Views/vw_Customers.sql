@@ -4,3 +4,4 @@
 		Customer_Age AS [Age],
 		Customer_Sex AS [Gender]
 	FROM Customers
+GO

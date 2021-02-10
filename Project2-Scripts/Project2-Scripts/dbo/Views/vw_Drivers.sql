@@ -5,7 +5,10 @@
 		D.Driver_Age AS [Age],
 		D.Driver_Sex AS [Gender],
 		CONCAT(R.Make, ' ', R.Model) AS [Registered Car],
+		C.County_Name as [County],
 		S.State_Name AS [State]
 	FROM States AS S 
-		JOIN Drivers AS D ON S.State_ID = D.State_ID 
+		JOIN Counties AS C on C.State_ID = S.State_ID
+		JOIN Drivers AS D ON C.County_ID = D.County_ID 
 		JOIN Registered_Cars AS R ON R.Registered_Car_ID = D.Registered_Car_ID
+GO
