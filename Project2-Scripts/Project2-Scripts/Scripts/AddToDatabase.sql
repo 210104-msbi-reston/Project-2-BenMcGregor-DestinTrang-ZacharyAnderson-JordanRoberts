@@ -25,7 +25,7 @@ AS
 begin
 	declare @stateid int = (select State_ID from States where State_Name = @state)
 	declare @cityid int = (select City_ID from Cities where City_Name = @city)
-	declare @clientid int = (select Client_ID from Companies where Company_Name = @company)
+	declare @clientid int = (select Company_ID from Companies where Company_Name = @company)
 	--Add a Customer
 	if @option = 'customer'
 	begin
