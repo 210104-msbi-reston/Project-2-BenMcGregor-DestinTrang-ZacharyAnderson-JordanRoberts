@@ -65,7 +65,7 @@
   <ItemGroup>
     <Build Include="dbo\Tables\Customers.sql" />
     <Build Include="dbo\Tables\States.sql" />
-    <Build Include="dbo\Tables\Zones.sql" />
+    <Build Include="dbo\Tables\Counties.sql" />
     <Build Include="dbo\Tables\Cities.sql" />
     <Build Include="dbo\Tables\Companies.sql" />
     <Build Include="dbo\Tables\Pickup_Locations.sql" />

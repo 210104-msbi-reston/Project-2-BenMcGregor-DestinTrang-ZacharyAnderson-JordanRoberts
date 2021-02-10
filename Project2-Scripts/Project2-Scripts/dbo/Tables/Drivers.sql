@@ -5,8 +5,8 @@
 	Driver_Age INT,
 	Driver_Sex VARCHAR(10),
 	Registered_Car_ID INT UNIQUE,
-	State_ID INT,
+	County_ID INT,
 
 	CONSTRAINT fk_Drivers_RegisteredCars FOREIGN KEY(Registered_Car_ID) REFERENCES Registered_Cars,
-	CONSTRAINT fk_Drivers_States FOREIGN KEY(State_ID) REFERENCES States
+	CONSTRAINT fk_Drivers_Counties FOREIGN KEY(County_ID) REFERENCES Counties
 )

@@ -2,7 +2,7 @@
 	City_ID INT PRIMARY KEY IDENTITY,
 	City_Name VARCHAR(30),
 	City_Population INT,
-	Zone_ID INT,
+	County_ID INT,
 
-	CONSTRAINT fk_Cities_Zones FOREIGN KEY(Zone_Id) REFERENCES Zones
+	CONSTRAINT fk_Cities_Counties FOREIGN KEY(County_ID) REFERENCES Counties
 )
