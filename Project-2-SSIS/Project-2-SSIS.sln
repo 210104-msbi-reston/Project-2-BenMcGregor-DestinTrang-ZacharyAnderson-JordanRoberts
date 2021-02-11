@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1401
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Project-2-SSIS", "Project-2-SSIS\Project-2-SSIS.dtproj", "{8B5F9BEE-2C23-4D41-A2C9-339D9E50BFB9}"
 EndProject
