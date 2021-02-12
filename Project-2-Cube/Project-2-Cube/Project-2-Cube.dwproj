@@ -6,10 +6,63 @@
     <Name>Project-2-Cube.database</Name>
     <FullPath>Project-2-Cube.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>Project-2.cube</Name>
+      <FullPath>Project-2.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Project-2.partitions</Name>
+          <FullPath>Project-2.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Customers.dim</Name>
+      <FullPath>Customers.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Pickup Locations.dim</Name>
+      <FullPath>Pickup Locations.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Drivers.dim</Name>
+      <FullPath>Drivers.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>Project-2.ds</Name>
+      <FullPath>Project-2.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>Project-2.dsv</Name>
+      <FullPath>Project-2.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>Project-2</Id>
+            <Name>Project-2</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DESKTOP-KHN5O1K\TRAININGSERVER;Integrated Security=SSPI;Initial Catalog=Project-2</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>Project-2</Id>
+            <Name>Project-2</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>
