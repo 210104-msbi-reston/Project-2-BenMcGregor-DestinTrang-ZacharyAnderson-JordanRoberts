@@ -8,28 +8,40 @@
   </Database>
   <Cubes>
     <ProjectItem>
-      <Name>Project-2.cube</Name>
-      <FullPath>Project-2.cube</FullPath>
+      <Name>Project-2-Cube.cube</Name>
+      <FullPath>Project-2-Cube.cube</FullPath>
       <Dependencies>
         <ProjectItem>
-          <Name>Project-2.partitions</Name>
-          <FullPath>Project-2.partitions</FullPath>
+          <Name>Project-2-Cube.partitions</Name>
+          <FullPath>Project-2-Cube.partitions</FullPath>
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>Customers.dim</Name>
-      <FullPath>Customers.dim</FullPath>
+      <Name>Dim Drivers.dim</Name>
+      <FullPath>Dim Drivers.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Pickup Locations.dim</Name>
-      <FullPath>Pickup Locations.dim</FullPath>
+      <Name>Dim Cities.dim</Name>
+      <FullPath>Dim Cities.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Drivers.dim</Name>
-      <FullPath>Drivers.dim</FullPath>
+      <Name>Dim Customers.dim</Name>
+      <FullPath>Dim Customers.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Order Item Info.dim</Name>
+      <FullPath>Dim Order Item Info.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Pick Up Locations.dim</Name>
+      <FullPath>Dim Pick Up Locations.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Time.dim</Name>
+      <FullPath>Dim Time.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
