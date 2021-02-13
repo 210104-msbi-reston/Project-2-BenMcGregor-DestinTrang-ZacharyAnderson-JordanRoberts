@@ -8,17 +8,21 @@
   </Database>
   <Cubes>
     <ProjectItem>
-      <Name>Project-2-Cube.cube</Name>
-      <FullPath>Project-2-Cube.cube</FullPath>
+      <Name>Project2DW.cube</Name>
+      <FullPath>Project2DW.cube</FullPath>
       <Dependencies>
         <ProjectItem>
-          <Name>Project-2-Cube.partitions</Name>
-          <FullPath>Project-2-Cube.partitions</FullPath>
+          <Name>Project2DW.partitions</Name>
+          <FullPath>Project2DW.partitions</FullPath>
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
   </Cubes>
   <Dimensions>
+    <ProjectItem>
+      <Name>Dim Time.dim</Name>
+      <FullPath>Dim Time.dim</FullPath>
+    </ProjectItem>
     <ProjectItem>
       <Name>Dim Drivers.dim</Name>
       <FullPath>Dim Drivers.dim</FullPath>
@@ -39,21 +43,17 @@
       <Name>Dim Pick Up Locations.dim</Name>
       <FullPath>Dim Pick Up Locations.dim</FullPath>
     </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Time.dim</Name>
-      <FullPath>Dim Time.dim</FullPath>
-    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
-      <Name>Project-2.ds</Name>
-      <FullPath>Project-2.ds</FullPath>
+      <Name>Project-2-DW.ds</Name>
+      <FullPath>Project-2-DW.ds</FullPath>
     </ProjectItem>
   </DataSources>
   <DataSourceViews>
     <ProjectItem>
-      <Name>Project-2.dsv</Name>
-      <FullPath>Project-2.dsv</FullPath>
+      <Name>Project2DW.dsv</Name>
+      <FullPath>Project2DW.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
   <Configurations>
@@ -64,7 +64,7 @@
           <ConfigurationSetting>
             <Id>Project-2</Id>
             <Name>Project-2</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DESKTOP-KHN5O1K\TRAININGSERVER;Integrated Security=SSPI;Initial Catalog=Project-2</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DESKTOP-KHN5O1K\TRAININGSERVER;Integrated Security=SSPI;Initial Catalog=Project2DW</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>

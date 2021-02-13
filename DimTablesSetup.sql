@@ -28,10 +28,10 @@ INSERT INTO FactOrderItems (
 	Order_ID, Order_Item_ID, City_ID, PickUp_ID, Driver_ID, Customer_ID,
 	Start_Time, Arrival_Time, PickUp_Time, Delivery_Time,
 	Order_Price, Item_Quantity, Tip_Amount, Driver_Rating, Customer_Rating)
-SELECT o.Order_ID, i.Item_ID, o.City_ID, o.Pickup_ID, o.Driver_ID, o.Customer_ID,
+SELECT o.Order_ID, i.Item_ID, p.City_ID, o.Pickup_ID, o.Driver_ID, o.Customer_ID,
 	o.Start_Time, o.Arrival_Time, o.Pickup_Time, o.Delivery_Time,
 	o.Order_Price, i.Quantity, o.Tip_Amount, o.Driver_Rating, o.Customer_Rating
-FROM Order_Items as i JOIN Orders as o ON i.Order_ID = o.Order_ID
+FROM Order_Items as i JOIN Orders as o ON i.Order_ID = o.Order_ID JOIN Pickup_Locations p on o.Pickup_ID = p.Pickup_ID
 
 
 CREATE TABLE DimCities (
@@ -104,7 +104,6 @@ truncate table DimTime
 DECLARE @CurrentTimeStamp AS DATETIME;
 SET @CurrentTimeStamp = '2015-02-01 00:00:00.000';
 
-
 WHILE @CurrentTimeStamp < '2021-02-16 23:59:00.000'
 BEGIN
 
@@ -120,6 +119,10 @@ BEGIN
 			datepart(quarter, @CurrentTimeStamp),
 			datepart(year, @CurrentTimeStamp)
 			)
-
-
 END
+select * from DimCities
+select * from DimCustomers
+select * from DimDrivers
+select * from DimOrderItemInfo
+select * from DimPickUpLocations
+select * from FactOrderItems
