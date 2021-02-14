@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1401
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Project2Reports", "Project2Reports\Project2Reports.rptproj", "{C9ABA77B-6784-43DE-8BE5-FDF12AEA5341}"
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Project2Reports", "..\..\..\Project2Reports.rptproj", "{C9ABA77B-6784-43DE-8BE5-FDF12AEA5341}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

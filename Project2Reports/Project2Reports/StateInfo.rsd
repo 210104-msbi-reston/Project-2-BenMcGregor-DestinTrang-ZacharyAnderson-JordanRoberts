@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@state">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT DISTINCT FactOrderItems.Order_ID, DimCities.State_Name, DimCities.County_Name, FactOrderItems.City_ID, FactOrderItems.Driver_ID, FactOrderItems.Order_Price, FactOrderItems.Arrival_Time
+FROM            DimCities INNER JOIN
+                         FactOrderItems ON DimCities.City_ID = FactOrderItems.City_ID
+WHERE        (DimCities.State_Name = @state)</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Order_ID">
+        <DataField>Order_ID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Driver_ID">
+        <DataField>Driver_ID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="State_Name">
+        <DataField>State_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="County_Name">
+        <DataField>County_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="City_ID">
+        <DataField>City_ID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Order_Price">
+        <DataField>Order_Price</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Arrival_Time">
+        <DataField>Arrival_Time</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

@@ -49,7 +49,27 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSet Include="Counties.rsd" />
+    <DataSet Include="LocationSalesData.rsd" />
+    <DataSet Include="OrdersByYear.rsd" />
+    <DataSet Include="SalesOverTime.rsd" />
+    <DataSet Include="StateInfo.rsd" />
+    <DataSet Include="States.rsd" />
+    <DataSet Include="StateSalesByMonth.rsd" />
+    <DataSet Include="TotalOrders.rsd" />
+    <DataSet Include="Totals.rsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <DataSource Include="DataSource1.rds" />
     <DataSource Include="Project-2-Cube.rds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Report Include="NationwideSalesOverTime.rdl" />
+    <Report Include="SalesByCounty.rdl" />
+    <Report Include="SalesByState.rdl" />
+    <Report Include="TabularSalesByLocation.rdl" />
+    <Report Include="TimeReport.rdl" />
+    <Report Include="TimeReportByYear.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
