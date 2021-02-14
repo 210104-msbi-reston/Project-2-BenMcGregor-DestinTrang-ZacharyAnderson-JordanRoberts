@@ -52,6 +52,7 @@
     <DataSet Include="Counties.rsd" />
     <DataSet Include="LocationSalesData.rsd" />
     <DataSet Include="OrdersByYear.rsd" />
+    <DataSet Include="SalesByYearByState.rsd" />
     <DataSet Include="SalesOverTime.rsd" />
     <DataSet Include="StateInfo.rsd" />
     <DataSet Include="States.rsd" />
@@ -64,7 +65,6 @@
     <DataSource Include="Project-2-Cube.rds" />
   </ItemGroup>
   <ItemGroup>
-    <Report Include="NationwideSalesOverTime.rdl" />
     <Report Include="SalesByCounty.rdl" />
     <Report Include="SalesByState.rdl" />
     <Report Include="TabularSalesByLocation.rdl" />

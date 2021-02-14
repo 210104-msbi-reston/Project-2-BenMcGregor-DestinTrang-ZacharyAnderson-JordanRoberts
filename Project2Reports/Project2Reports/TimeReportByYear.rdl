@@ -469,9 +469,8 @@
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
             <Top>0.31944in</Top>
-            <Left>0in</Left>
             <Height>2in</Height>
-            <Width>8.04861in</Width>
+            <Width>9.48611in</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -1817,9 +1816,8 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Top>2.38889in</Top>
-            <Left>0in</Left>
             <Height>1.75in</Height>
-            <Width>4.83333in</Width>
+            <Width>4.83332in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1833,15 +1831,15 @@
                 <ChartMember>
                   <Group Name="Chart2_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Quarter.Value</GroupExpression>
+                      <GroupExpression>=Fields!Month.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Quarter.Value</Value>
+                      <Value>=Fields!Month.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!Quarter.Value</Label>
+                  <Label>=Fields!Month.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -1862,6 +1860,7 @@
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
+                        <UseValueAsLabel>true</UseValueAsLabel>
                       </ChartDataLabel>
                       <Style>
                         <Border>
@@ -1908,12 +1907,13 @@
                       <Color>#5c5c5c</Color>
                     </Style>
                     <ChartAxisTitle>
-                      <Caption>Quarter</Caption>
+                      <Caption>Month</Caption>
                       <Style>
                         <FontSize>9pt</FontSize>
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
+                    <Interval>1</Interval>
                     <ChartMajorGridLines>
                       <Enabled>False</Enabled>
                       <Style>
@@ -2061,8 +2061,8 @@
                       <Length>0.5</Length>
                     </ChartMinorTickMarks>
                     <CrossAt>NaN</CrossAt>
-                    <Minimum>60000</Minimum>
-                    <Maximum>90000</Maximum>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -2150,11 +2150,8 @@
             <Top>2.70833in</Top>
             <Left>4.90278in</Left>
             <Height>2in</Height>
-            <Width>3in</Width>
+            <Width>4.58333in</Width>
             <ZIndex>2</ZIndex>
-            <Visibility>
-              <Hidden>=Parameters!year.Value=2021</Hidden>
-            </Visibility>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -2181,7 +2178,6 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox48</rd:DefaultName>
-            <Left>0in</Left>
             <Height>0.25in</Height>
             <Width>2.01042in</Width>
             <ZIndex>3</ZIndex>

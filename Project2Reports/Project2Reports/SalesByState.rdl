@@ -19,35 +19,12 @@
           <DataField>State_Name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Fact_Order_Items_Count">
-          <DataField>Fact_Order_Items_Count</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="Order_Price">
           <DataField>Order_Price</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="DataSet2">
-      <SharedDataSet>
-        <SharedDataSetReference>Counties</SharedDataSetReference>
-      </SharedDataSet>
-      <Fields>
-        <Field Name="State_Name">
-          <DataField>State_Name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="County_Name">
-          <DataField>County_Name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Item_Quantity">
-          <DataField>Item_Quantity</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Order_Price">
-          <DataField>Order_Price</DataField>
+        <Field Name="Count_of_Orders">
+          <DataField>Count_of_Orders</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
@@ -167,7 +144,7 @@
                     <StartColor>Red</StartColor>
                     <EndColor>Green</EndColor>
                     <ShowInColorScale>true</ShowInColorScale>
-                    <DataValue>=Sum(Fields!Fact_Order_Items_Count.Value)</DataValue>
+                    <DataValue>=Sum(Fields!Count_of_Orders.Value)</DataValue>
                     <StartValue />
                     <EndValue />
                     <LegendName>Legend1</LegendName>
