@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>Project-2-Cube</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="DeliveryTimeYear">
+          <DefaultValue>=new Object() {"[Delivery Time].[Year].&amp;[2015]", "[Delivery Time].[Year].&amp;[2016]", "[Delivery Time].[Year].&amp;[2017]", "[Delivery Time].[Year].&amp;[2018]", "[Delivery Time].[Year].&amp;[2019]", "[Delivery Time].[Year].&amp;[2020]", "[Delivery Time].[Year].&amp;[2021]"}</DefaultValue>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>String</rd:DbType>
+          <rd:IsMultiValued>true</rd:IsMultiValued>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText> SELECT NON EMPTY { [Measures].[Count of Orders], [Measures].[Order Price] } ON COLUMNS, NON EMPTY { ([Delivery Time].[Hierarchy].[Minute].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DeliveryTimeYear, CONSTRAINED) ) ON COLUMNS FROM [Project2DW]) WHERE ( IIF( STRTOSET(@DeliveryTimeYear, CONSTRAINED).Count = 1, STRTOSET(@DeliveryTimeYear, CONSTRAINED), [Delivery Time].[Year].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>MDX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Delivery Time</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Delivery Time].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>Year</LevelName>
+                    <UniqueName>[Delivery Time].[Hierarchy].[Year]</UniqueName>
+                  </ID>
+                  <ItemCaption>Year</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Delivery Time</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Delivery Time].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>Quarter</LevelName>
+                    <UniqueName>[Delivery Time].[Hierarchy].[Quarter]</UniqueName>
+                  </ID>
+                  <ItemCaption>Quarter</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Delivery Time</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Delivery Time].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>Month</LevelName>
+                    <UniqueName>[Delivery Time].[Hierarchy].[Month]</UniqueName>
+                  </ID>
+                  <ItemCaption>Month</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Delivery Time</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Delivery Time].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>Week</LevelName>
+                    <UniqueName>[Delivery Time].[Hierarchy].[Week]</UniqueName>
+                  </ID>
+                  <ItemCaption>Week</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Delivery Time</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Delivery Time].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>Day</LevelName>
+                    <UniqueName>[Delivery Time].[Hierarchy].[Day]</UniqueName>
+                  </ID>
+                  <ItemCaption>Day</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Delivery Time</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Delivery Time].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>Hour</LevelName>
+                    <UniqueName>[Delivery Time].[Hierarchy].[Hour]</UniqueName>
+                  </ID>
+                  <ItemCaption>Hour</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Delivery Time</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Delivery Time].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>Minute</LevelName>
+                    <UniqueName>[Delivery Time].[Hierarchy].[Minute]</UniqueName>
+                  </ID>
+                  <ItemCaption>Minute</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Count of Orders</MeasureName>
+                    <UniqueName>[Measures].[Count of Orders]</UniqueName>
+                  </ID>
+                  <ItemCaption>Count of Orders</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Order Price</MeasureName>
+                    <UniqueName>[Measures].[Order Price]</UniqueName>
+                  </ID>
+                  <ItemCaption>Order Price</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>Project2DW</From>
+            <Filter>
+              <FilterItems>
+                <FilterItem>
+                  <HierarchyUniqueName>[Delivery Time].[Year]</HierarchyUniqueName>
+                  <Condition xsi:type="EqualTo">
+                    <Members />
+                    <Parametrized>true</Parametrized>
+                  </Condition>
+                </FilterItem>
+              </FilterItems>
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement> SELECT NON EMPTY { [Measures].[Count of Orders], [Measures].[Order Price] } ON COLUMNS, NON EMPTY { ([Delivery Time].[Hierarchy].[Minute].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DeliveryTimeYear, CONSTRAINED) ) ON COLUMNS FROM [Project2DW]) WHERE ( IIF( STRTOSET(@DeliveryTimeYear, CONSTRAINED).Count = 1, STRTOSET(@DeliveryTimeYear, CONSTRAINED), [Delivery Time].[Year].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+            <ParameterDefinitions>
+              <ParameterDefinition>
+                <Name>DeliveryTimeYear</Name>
+                <DefaultValues />
+                <Caption>Delivery Time.Year</Caption>
+                <HierarchyUniqueName>[Delivery Time].[Year]</HierarchyUniqueName>
+                <ParameterValuesQuery>
+                  <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Delivery Time].[Year].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Delivery Time].[Year].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Delivery Time].[Year].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Delivery Time].[Year].ALLMEMBERS ON ROWS FROM [Project2DW]</Statement>
+                  <ParameterizedStatement>
+                    <ReferencedParameters />
+                  </ParameterizedStatement>
+                </ParameterValuesQuery>
+                <MultipleValues>true</MultipleValues>
+              </ParameterDefinition>
+            </ParameterDefinitions>
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Year">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Delivery Time].[Hierarchy].[Year]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Quarter">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Delivery Time].[Hierarchy].[Quarter]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Month">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Delivery Time].[Hierarchy].[Month]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Week">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Delivery Time].[Hierarchy].[Week]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Day">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Delivery Time].[Hierarchy].[Day]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Hour">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Delivery Time].[Hierarchy].[Hour]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Minute">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Delivery Time].[Hierarchy].[Minute]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Count_of_Orders">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Count of Orders]" /&gt;</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Order_Price">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Order Price]" /&gt;</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

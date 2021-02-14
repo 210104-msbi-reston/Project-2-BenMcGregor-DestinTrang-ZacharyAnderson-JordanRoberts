@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@year">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT DISTINCT FactOrderItems.Order_ID, DimCities.State_Name, YEAR(FactOrderItems.Delivery_Time) AS Expr1, FactOrderItems.Order_Price
+FROM            FactOrderItems INNER JOIN
+                         DimCities ON FactOrderItems.City_ID = DimCities.City_ID
+WHERE        (YEAR(FactOrderItems.Delivery_Time) = @year)</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Order_ID">
+        <DataField>Order_ID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="State_Name">
+        <DataField>State_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr1">
+        <DataField>Expr1</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Order_Price">
+        <DataField>Order_Price</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

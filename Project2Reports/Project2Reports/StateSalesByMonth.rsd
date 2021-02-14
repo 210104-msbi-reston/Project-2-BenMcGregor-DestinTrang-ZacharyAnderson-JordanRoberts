@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>Project-2-Cube</DataSourceReference>
+      <CommandText> SELECT NON EMPTY { [Measures].[Fact Order Items Count] } ON COLUMNS, NON EMPTY { ([Dim Cities].[Hierarchy].[City Name].ALLMEMBERS * [Start Time].[Hierarchy].[Month].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [Project2DW] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>MDX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Cities</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Dim Cities].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>State Name</LevelName>
+                    <UniqueName>[Dim Cities].[Hierarchy].[State Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>State Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Cities</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Dim Cities].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>County Name</LevelName>
+                    <UniqueName>[Dim Cities].[Hierarchy].[County Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>County Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Cities</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Dim Cities].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>City Name</LevelName>
+                    <UniqueName>[Dim Cities].[Hierarchy].[City Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>City Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Start Time</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Start Time].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>Year</LevelName>
+                    <UniqueName>[Start Time].[Hierarchy].[Year]</UniqueName>
+                  </ID>
+                  <ItemCaption>Year</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Start Time</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Start Time].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>Quarter</LevelName>
+                    <UniqueName>[Start Time].[Hierarchy].[Quarter]</UniqueName>
+                  </ID>
+                  <ItemCaption>Quarter</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Start Time</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Start Time].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>Month</LevelName>
+                    <UniqueName>[Start Time].[Hierarchy].[Month]</UniqueName>
+                  </ID>
+                  <ItemCaption>Month</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Fact Order Items Count</MeasureName>
+                    <UniqueName>[Measures].[Fact Order Items Count]</UniqueName>
+                  </ID>
+                  <ItemCaption>Fact Order Items Count</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>Project2DW</From>
+            <Filter>
+              <FilterItems />
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement> SELECT NON EMPTY { [Measures].[Fact Order Items Count] } ON COLUMNS, NON EMPTY { ([Dim Cities].[Hierarchy].[City Name].ALLMEMBERS * [Start Time].[Hierarchy].[Month].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [Project2DW] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="State_Name">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Cities].[Hierarchy].[State Name]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="County_Name">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Cities].[Hierarchy].[County Name]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="City_Name">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Cities].[Hierarchy].[City Name]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Year">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Start Time].[Hierarchy].[Year]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Quarter">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Start Time].[Hierarchy].[Quarter]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Month">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Start Time].[Hierarchy].[Month]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Fact_Order_Items_Count">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Fact Order Items Count]" /&gt;</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
