@@ -62,14 +62,17 @@
   </ItemGroup>
   <ItemGroup>
     <DataSource Include="DataSource1.rds" />
+    <DataSource Include="DataSourceD.rds" />
     <DataSource Include="Project-2-Cube.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="DriverRatings.rdl" />
     <Report Include="SalesByCounty.rdl" />
     <Report Include="SalesByState.rdl" />
     <Report Include="TabularSalesByLocation.rdl" />
     <Report Include="TimeReport.rdl" />
     <Report Include="TimeReportByYear.rdl" />
+    <Report Include="TipsReport.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
