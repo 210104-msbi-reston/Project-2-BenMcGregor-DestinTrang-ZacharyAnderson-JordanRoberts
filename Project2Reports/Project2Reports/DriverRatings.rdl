@@ -13,11 +13,13 @@
     <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>DataSourceD</DataSourceName>
-        <CommandText>SELECT DimDrivers.Driver_ID, DimDrivers.Driver_Name, AVG(CAST(FactOrderItems.Driver_Rating AS Float)) AS Expr1, COUNT(*) AS Expr2
+        <CommandText>
+SELECT DimDrivers.Driver_ID, DimDrivers.Driver_Name, AVG(CAST(o.Driver_Rating AS Float)) AS Expr1, AVG(CAST(o.Customer_Rating AS Float)) AS Expr2, COUNT(*) AS Expr3
 FROM     DimDrivers INNER JOIN
-                  FactOrderItems ON DimDrivers.Driver_ID = FactOrderItems.Driver_ID
+         (SELECT FactOrderItems.Order_ID, FactOrderItems.Driver_ID, FactOrderItems.Driver_Rating, FactOrderItems.Customer_Rating FROM FactOrderItems GROUP BY FactOrderItems.Order_ID, FactOrderItems.Driver_ID, FactOrderItems.Driver_Rating, FactOrderItems.Customer_Rating) AS o
+		 ON DimDrivers.Driver_ID = o.Driver_ID
 GROUP BY DimDrivers.Driver_ID, DimDrivers.Driver_Name
-ORDER BY Expr1 DESC</CommandText>
+order by DimDrivers.Driver_ID</CommandText>
       </Query>
       <Fields>
         <Field Name="Driver_ID">
@@ -34,7 +36,39 @@ ORDER BY Expr1 DESC</CommandText>
         </Field>
         <Field Name="Expr2">
           <DataField>Expr2</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Expr3">
+          <DataField>Expr3</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>DataSourceD</DataSourceName>
+        <CommandText>SELECT DimCustomers.Customer_ID, AVG(CAST(f.Customer_Rating AS Float)) AS Expr1, AVG(CAST(f.Driver_Rating AS Float)) AS Expr2, COUNT(*) AS Expr3
+FROM     DimCustomers INNER JOIN
+         (SELECT FactOrderItems.Order_ID, FactOrderItems.Customer_ID, FactOrderItems.Customer_Rating, FactOrderItems.Driver_Rating FROM FactOrderItems GROUP BY FactOrderItems.Order_ID, FactOrderItems.Customer_ID, FactOrderItems.Customer_Rating, FactOrderItems.Driver_Rating) AS f
+		 ON DimCustomers.Customer_ID = f.Customer_ID
+GROUP BY DimCustomers.Customer_ID</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Customer_ID">
+          <DataField>Customer_ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Expr1">
+          <DataField>Expr1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Expr3">
+          <DataField>Expr3</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Expr2">
+          <DataField>Expr2</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -50,7 +84,7 @@ ORDER BY Expr1 DESC</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>DriverRatings</Value>
+                    <Value>Driver/Customer Ratings</Value>
                     <Style>
                       <FontFamily>Segoe UI Light</FontFamily>
                       <FontSize>24pt</FontSize>
@@ -78,7 +112,7 @@ ORDER BY Expr1 DESC</CommandText>
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.7in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.7in</Width>
@@ -105,7 +139,7 @@ ORDER BY Expr1 DESC</CommandText>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
+                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -116,50 +150,10 @@ ORDER BY Expr1 DESC</CommandText>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
                               <Style>Solid</Style>
-                            </BottomBorder>
+                            </Border>
+                            <BackgroundColor>#bc2e21</BackgroundColor>
                             <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox4">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Driver Name</Value>
-                                  <Style>
-                                    <FontFamily />
-                                    <FontSize>11pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox4</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -172,6 +166,9 @@ ORDER BY Expr1 DESC</CommandText>
                       <CellContents>
                         <Textbox Name="textbox3">
                           <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Expr1.Value</SortExpression>
+                          </UserSort>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -182,7 +179,7 @@ ORDER BY Expr1 DESC</CommandText>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
+                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -196,11 +193,51 @@ ORDER BY Expr1 DESC</CommandText>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
                               <Style>Solid</Style>
-                            </BottomBorder>
+                            </Border>
+                            <BackgroundColor>#bc2e21</BackgroundColor>
                             <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Expr2.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Average Given Rating</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#bc2e21</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -223,7 +260,7 @@ ORDER BY Expr1 DESC</CommandText>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
+                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -236,10 +273,9 @@ ORDER BY Expr1 DESC</CommandText>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
                               <Style>Solid</Style>
-                            </BottomBorder>
+                            </Border>
+                            <BackgroundColor>#bc2e21</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -276,46 +312,9 @@ ORDER BY Expr1 DESC</CommandText>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
                               <Style>Solid</Style>
-                            </BottomBorder>
+                            </Border>
                             <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Driver_Name">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Driver_Name.Value</Value>
-                                  <Style>
-                                    <FontFamily />
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Driver_Name</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -347,12 +346,10 @@ ORDER BY Expr1 DESC</CommandText>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
                               <Style>Solid</Style>
-                            </BottomBorder>
-                            <BackgroundColor>=IIF(Fields!Expr1.Value &gt; 3, "Green", 
-	IIF(Fields!Expr1.Value &gt; 2, "Yellow", "Red"))</BackgroundColor>
+                            </Border>
+                            <BackgroundColor>=IIF(Fields!Expr1.Value &gt; 3, "LightGreen", 
+	IIF(Fields!Expr1.Value &gt; 2, "Yellow", "Tomato"))</BackgroundColor>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -364,7 +361,7 @@ ORDER BY Expr1 DESC</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Expr2">
+                        <Textbox Name="Expr21">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -381,14 +378,47 @@ ORDER BY Expr1 DESC</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Expr2</rd:DefaultName>
+                          <rd:DefaultName>Expr21</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
                               <Style>Solid</Style>
-                            </BottomBorder>
+                            </Border>
+                            <BackgroundColor>=IIF(Fields!Expr2.Value &gt; 3, "LightGreen", 
+	IIF(Fields!Expr2.Value &gt; 2, "Yellow", "Tomato"))</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Expr3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Expr3.Value</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Expr3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -432,15 +462,343 @@ ORDER BY Expr1 DESC</CommandText>
             <DataSetName>DataSet1</DataSetName>
             <Top>0.42in</Top>
             <Height>0.43in</Height>
-            <Width>5.11667in</Width>
+            <Width>5.81667in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.36667in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.43333in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.215in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Customer ID</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#bc2e21</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox10">
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Expr1.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Average Customer Rating</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#bc2e21</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox12">
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Expr2.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Average Rating Given</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#bc2e21</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox14">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Orders Made</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#bc2e21</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.215in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Customer_ID">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Customer_ID.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Customer_ID</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Expr11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Expr1.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Expr11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(Fields!Expr1.Value &gt; 3, "LightGreen", 
+	IIF(Fields!Expr1.Value &gt; 2, "Yellow", "Tomato"))</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Expr2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Expr2.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Expr2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(Fields!Expr2.Value &gt; 3, "LightGreen", 
+	IIF(Fields!Expr2.Value &gt; 2, "Yellow", "Tomato"))</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Expr31">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Expr3.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Expr31</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet2</DataSetName>
+            <Top>0.42in</Top>
+            <Left>5.99445in</Left>
+            <Height>0.43in</Height>
+            <Width>4.8in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
         </ReportItems>
-        <Height>0.85in</Height>
+        <Height>0.92in</Height>
         <Style />
       </Body>
-      <Width>5.11667in</Width>
+      <Width>11.68611in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

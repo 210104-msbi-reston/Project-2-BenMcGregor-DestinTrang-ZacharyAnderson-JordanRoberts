@@ -13,13 +13,17 @@
     <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>DataSourceD</DataSourceName>
-        <CommandText>SELECT DimCities.City_Name, AVG(FactOrderItems.Order_Price) AS Expr1, AVG(FactOrderItems.Tip_Amount) AS Expr2, AVG(FactOrderItems.Tip_Amount/FactOrderItems.Order_Price) * 100 AS Expr3
+        <CommandText>SELECT DimCities.State_Name, DimCities.City_Name, AVG(FactOrderItems.Order_Price) AS Expr1, AVG(FactOrderItems.Tip_Amount) AS Expr2, AVG(FactOrderItems.Tip_Amount/FactOrderItems.Order_Price) * 100 AS Expr3
 FROM     FactOrderItems INNER JOIN
                   DimCities ON FactOrderItems.City_ID = DimCities.City_ID
-GROUP BY DimCities.City_Name
+GROUP BY DimCities.City_Name, DimCities.State_Name
 ORDER BY Expr3 DESC</CommandText>
       </Query>
       <Fields>
+        <Field Name="State_Name">
+          <DataField>State_Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="City_Name">
           <DataField>City_Name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -77,9 +81,6 @@ ORDER BY Expr3 DESC</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
                   <Width>1.80833in</Width>
                 </TablixColumn>
                 <TablixColumn>
@@ -95,46 +96,6 @@ ORDER BY Expr3 DESC</CommandText>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox4">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>City</Value>
-                                  <Style>
-                                    <FontFamily />
-                                    <FontSize>11pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox4</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <BackgroundColor>LightSteelBlue</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="textbox2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -147,13 +108,13 @@ ORDER BY Expr3 DESC</CommandText>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
+                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <FontFamily />
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -165,7 +126,7 @@ ORDER BY Expr3 DESC</CommandText>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
-                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <BackgroundColor>#bc2e21</BackgroundColor>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -189,13 +150,13 @@ ORDER BY Expr3 DESC</CommandText>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
+                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <FontFamily />
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -207,7 +168,7 @@ ORDER BY Expr3 DESC</CommandText>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
-                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <BackgroundColor>#bc2e21</BackgroundColor>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -231,12 +192,12 @@ ORDER BY Expr3 DESC</CommandText>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
+                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -248,7 +209,7 @@ ORDER BY Expr3 DESC</CommandText>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
-                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <BackgroundColor>#bc2e21</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -262,42 +223,6 @@ ORDER BY Expr3 DESC</CommandText>
                 <TablixRow>
                   <Height>0.21in</Height>
                   <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="City_Name">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!City_Name.Value</Value>
-                                  <Style>
-                                    <FontFamily />
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>City_Name</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <BackgroundColor>LightGrey</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Expr1">
@@ -415,33 +340,237 @@ ORDER BY Expr3 DESC</CommandText>
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
-                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
+                  <TablixHeader>
+                    <Size>1in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox18">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>State</Value>
+                                <Style>
+                                  <FontFamily />
+                                  <FontSize>11pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox18</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                          </Border>
+                          <BottomBorder>
+                            <Style>Solid</Style>
+                          </BottomBorder>
+                          <BackgroundColor>#bc2e21</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>1.25in</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox25">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>City Name</Value>
+                                    <Style>
+                                      <FontFamily />
+                                      <FontSize>11pt</FontSize>
+                                      <FontWeight>Bold</FontWeight>
+                                      <Color>White</Color>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Center</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Textbox25</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                              </Border>
+                              <BottomBorder>
+                                <Style>Solid</Style>
+                              </BottomBorder>
+                              <BackgroundColor>#bc2e21</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember>
+                          <KeepTogether>true</KeepTogether>
+                        </TablixMember>
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
                   <KeepWithGroup>After</KeepWithGroup>
                   <RepeatOnNewPage>true</RepeatOnNewPage>
-                  <KeepTogether>true</KeepTogether>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="table1_Details_Group">
-                    <DataElementName>Detail</DataElementName>
+                  <Group Name="State">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!State_Name.Value</GroupExpression>
+                    </GroupExpressions>
                   </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>State Name</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>1in</Size>
+                    <CellContents>
+                      <Textbox Name="State_Name1">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!State_Name.Value</Value>
+                                <Style>
+                                  <FontFamily />
+                                  <Color>#333333</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>State_Name1</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                          </Border>
+                          <BottomBorder>
+                            <Style>Solid</Style>
+                          </BottomBorder>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
                   <TablixMembers>
-                    <TablixMember />
+                    <TablixMember>
+                      <Group Name="City_Name">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!City_Name.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!Expr3.Value</Value>
+                          <Direction>Descending</Direction>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixHeader>
+                        <Size>1.25in</Size>
+                        <CellContents>
+                          <Textbox Name="City_Name1">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!City_Name.Value</Value>
+                                    <Style>
+                                      <FontFamily />
+                                      <Color>#333333</Color>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>City_Name1</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                              </Border>
+                              <BottomBorder>
+                                <Style>Solid</Style>
+                              </BottomBorder>
+                              <BackgroundColor>LightGrey</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember>
+                          <Group Name="Details">
+                            <DataElementName>Detail</DataElementName>
+                          </Group>
+                          <SortExpressions>
+                            <SortExpression>
+                              <Value>=Fields!Expr3.Value</Value>
+                            </SortExpression>
+                          </SortExpressions>
+                          <TablixMembers>
+                            <TablixMember />
+                          </TablixMembers>
+                          <Visibility>
+                            <Hidden>true</Hidden>
+                            <ToggleItem>City_Name1</ToggleItem>
+                          </Visibility>
+                          <DataElementName>Detail_Collection</DataElementName>
+                          <DataElementOutput>Output</DataElementOutput>
+                          <KeepTogether>true</KeepTogether>
+                        </TablixMember>
+                      </TablixMembers>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                        <ToggleItem>State_Name1</ToggleItem>
+                      </Visibility>
+                    </TablixMember>
                   </TablixMembers>
-                  <DataElementName>Detail_Collection</DataElementName>
-                  <DataElementOutput>Output</DataElementOutput>
-                  <KeepTogether>true</KeepTogether>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Top>0.42in</Top>
             <Height>0.43in</Height>
-            <Width>5.65833in</Width>
+            <Width>6.90833in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
@@ -449,7 +578,7 @@ ORDER BY Expr3 DESC</CommandText>
         <Height>0.85in</Height>
         <Style />
       </Body>
-      <Width>5.65833in</Width>
+      <Width>7.85833in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

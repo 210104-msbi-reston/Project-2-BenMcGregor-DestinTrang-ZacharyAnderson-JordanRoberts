@@ -66,6 +66,7 @@
     <DataSource Include="Project-2-Cube.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="CustomerReport.rdl" />
     <Report Include="DriverRatings.rdl" />
     <Report Include="SalesByCounty.rdl" />
     <Report Include="SalesByState.rdl" />
