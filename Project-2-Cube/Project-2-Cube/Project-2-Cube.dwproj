@@ -17,6 +17,16 @@
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Project2DW 1.cube</Name>
+      <FullPath>Project2DW 1.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Project2DW 1.partitions</Name>
+          <FullPath>Project2DW 1.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>
@@ -42,6 +52,10 @@
     <ProjectItem>
       <Name>Dim Pick Up Locations.dim</Name>
       <FullPath>Dim Pick Up Locations.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Time.dim</Name>
+      <FullPath>Time.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>

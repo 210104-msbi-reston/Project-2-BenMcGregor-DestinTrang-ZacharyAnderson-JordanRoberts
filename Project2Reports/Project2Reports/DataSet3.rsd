@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet3">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@custid">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT        DimOrderItemInfo.Item_Name, FactOrderItems.Order_ID, FactOrderItems.Item_Quantity
+FROM            FactOrderItems INNER JOIN
+                         DimOrderItemInfo ON FactOrderItems.Order_Item_ID = DimOrderItemInfo.Item_ID
+WHERE        (FactOrderItems.Customer_ID = @custid)</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Item_Name">
+        <DataField>Item_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Order_ID">
+        <DataField>Order_ID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Item_Quantity">
+        <DataField>Item_Quantity</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

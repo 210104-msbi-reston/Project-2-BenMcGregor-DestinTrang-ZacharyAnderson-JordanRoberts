@@ -12,7 +12,7 @@
     <TargetDatasetFolder>Datasets</TargetDatasetFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
     <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
-    <TargetServerURL>http://localhost/reportserver</TargetServerURL>
+    <TargetServerURL>http://desktop-khn5o1k/ReportServer_TRAININGSERVER</TargetServerURL>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'DebugLocal' ">
     <FullPath>DebugLocal</FullPath>
@@ -50,11 +50,16 @@
   </PropertyGroup>
   <ItemGroup>
     <DataSet Include="Counties.rsd" />
+    <DataSet Include="DataSet1.rsd" />
+    <DataSet Include="DataSet2.rsd" />
+    <DataSet Include="DataSet3.rsd" />
+    <DataSet Include="DataSet4.rsd" />
     <DataSet Include="LocationSalesData.rsd" />
     <DataSet Include="OrdersByYear.rsd" />
     <DataSet Include="SalesByYearByState.rsd" />
     <DataSet Include="SalesOverTime.rsd" />
     <DataSet Include="StateInfo.rsd" />
+    <DataSet Include="StateInfoCube.rsd" />
     <DataSet Include="States.rsd" />
     <DataSet Include="StateSalesByMonth.rsd" />
     <DataSet Include="TotalOrders.rsd" />
@@ -65,6 +70,8 @@
     <DataSource Include="Project-2-Cube.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="OrderDetails.rdl" />
+    <Report Include="OrdersByCustomer.rdl" />
     <Report Include="SalesByCounty.rdl" />
     <Report Include="SalesByState.rdl" />
     <Report Include="TabularSalesByLocation.rdl" />
