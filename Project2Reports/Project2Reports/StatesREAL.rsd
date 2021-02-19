@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet2">
+    <Query>
+      <DataSourceReference>Project-2-Cube</DataSourceReference>
+      <CommandText>WITH
+MEMBER [Measures].[ParamValue] as [Dim Cities].[State Name].CurrentMember.UniqueName
+ SELECT NON EMPTY { [Measures].[ParamValue] } ON COLUMNS, NON EMPTY { ([Dim Cities].[State Name].[State Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [Project2DW] CELL PROPERTIES VALUE</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>MDX</CommandType>
+          <Type>Query</Type>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Cities</DimensionName>
+                    <HierarchyName>State Name</HierarchyName>
+                    <HierarchyUniqueName>[Dim Cities].[State Name]</HierarchyUniqueName>
+                    <LevelName>State Name</LevelName>
+                    <UniqueName>[Dim Cities].[State Name].[State Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>State Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                  <MemberValue>true</MemberValue>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>ParamValue</MeasureName>
+                    <UniqueName>[Measures].[ParamValue]</UniqueName>
+                  </ID>
+                  <ItemCaption>ParamValue</ItemCaption>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>Project2DW</From>
+            <Filter>
+              <FilterItems />
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties />
+          </QuerySpecification>
+          <Query>
+            <Statement>WITH
+MEMBER [Measures].[ParamValue] as [Dim Cities].[State Name].CurrentMember.UniqueName
+ SELECT NON EMPTY { [Measures].[ParamValue] } ON COLUMNS, NON EMPTY { ([Dim Cities].[State Name].[State Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [Project2DW] CELL PROPERTIES VALUE</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="State_Name">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Cities].[State Name].[State Name]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ParamValue">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParamValue]" /&gt;</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

@@ -578,12 +578,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>$</Value>
-                                  <Style />
-                                </TextRun>
-                                <TextRun>
                                   <Value>=System.Math.Round(Sum(Fields!Order_Price.Value), 2)</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -647,12 +646,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>$</Value>
-                                  <Style />
-                                </TextRun>
-                                <TextRun>
                                   <Value>=System.Math.Round(Sum(Fields!Order_Price.Value), 2)</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -716,12 +714,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>$</Value>
-                                  <Style />
-                                </TextRun>
-                                <TextRun>
                                   <Value>=System.Math.Round(Sum(Fields!Order_Price.Value), 2)</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -785,12 +782,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>$</Value>
-                                  <Style />
-                                </TextRun>
-                                <TextRun>
                                   <Value>=System.Math.Round(Sum(Fields!Order_Price.Value), 2)</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -854,87 +850,17 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>$</Value>
-                                  <Style />
-                                </TextRun>
-                                <TextRun>
                                   <Value>=System.Math.Round(Sum(Fields!Order_Price.Value), 2)</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox46</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.25in</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Order_ID">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Count(Fields!Order_ID.Value)</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Order_ID</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Order_Price">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>$</Value>
-                                  <Style />
-                                </TextRun>
-                                <TextRun>
-                                  <Value>=System.Math.Round(Sum(Fields!Order_Price.Value), 2)</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Order_Price</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1770,7 +1696,6 @@
                                   </TablixHeader>
                                   <TablixMembers>
                                     <TablixMember />
-                                    <TablixMember />
                                   </TablixMembers>
                                   <Visibility>
                                     <Hidden>true</Hidden>
@@ -1801,7 +1726,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Top>2.80555in</Top>
-            <Height>1.75in</Height>
+            <Height>1.5in</Height>
             <Width>4.39583in</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -2248,15 +2173,22 @@
                     <Value>Total Sales</Value>
                     <Style>
                       <FontStyle>Italic</FontStyle>
+                      <FontSize>12pt</FontSize>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value> : $</Value>
-                    <Style />
+                    <Value> : </Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Round(Sum(Fields!Order_Price.Value, "DataSet1"),2)</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <Format>'$'#,0.00;('$'#,0.00)</Format>
+                      <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -2288,15 +2220,20 @@
                     <Value>Total Orders</Value>
                     <Style>
                       <FontStyle>Italic</FontStyle>
+                      <FontSize>12pt</FontSize>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value> : </Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Count(Fields!Order_ID.Value, "DataSet1")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -2380,15 +2317,20 @@
                     <Value>Operational Counties</Value>
                     <Style>
                       <FontStyle>Italic</FontStyle>
+                      <FontSize>12pt</FontSize>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value> : </Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Count(Fields!County_Name.Value, "DataSet2")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
