@@ -4,7 +4,7 @@
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="DataSource1">
-      <DataSourceReference>STOREAPP1-Project2DW</DataSourceReference>
+      <DataSourceReference>Project-2-Cube</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>57477dd5-355c-4f92-9b0a-27a6d3ce2df1</rd:DataSourceID>
     </DataSource>

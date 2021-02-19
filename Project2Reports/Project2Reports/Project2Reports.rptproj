@@ -49,14 +49,26 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSet Include="CarInformation.rsd" />
     <DataSet Include="Counties.rsd" />
+    <DataSet Include="CustomerOrders.rsd" />
+    <DataSet Include="CustomerOrdersByAge.rsd" />
+    <DataSet Include="CustomersByGender.rsd" />
+    <DataSet Include="DataSet1.rsd" />
+    <DataSet Include="DriversByGender.rsd" />
     <DataSet Include="LocationSalesData.rsd" />
+    <DataSet Include="OrderDetails.rsd" />
     <DataSet Include="OrdersByYear.rsd" />
     <DataSet Include="SalesByYearByState.rsd" />
     <DataSet Include="SalesOverTime.rsd" />
+    <DataSet Include="SalesPerCompany.rsd" />
+    <DataSet Include="SalesPerItem.rsd" />
     <DataSet Include="StateInfo.rsd" />
+    <DataSet Include="StateInfoCube.rsd" />
     <DataSet Include="States.rsd" />
     <DataSet Include="StateSalesByMonth.rsd" />
+    <DataSet Include="StatesList.rsd" />
+    <DataSet Include="StatesREAL.rsd" />
     <DataSet Include="TotalOrders.rsd" />
     <DataSet Include="Totals.rsd" />
   </ItemGroup>
@@ -66,10 +78,18 @@
     <DataSource Include="Project-2-Cube.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="AgeReport.rdl" />
     <Report Include="CustomerReport.rdl" />
+    <Report Include="CustomersByGender.rdl" />
     <Report Include="DriverRatings.rdl" />
+    <Report Include="DriversByGender.rdl" />
+    <Report Include="NumberOfOrdersPerCar.rdl" />
+    <Report Include="OrderDetails.rdl" />
+    <Report Include="OrdersByCustomer.rdl" />
     <Report Include="SalesByCounty.rdl" />
     <Report Include="SalesByState.rdl" />
+    <Report Include="SalesPerCompany.rdl" />
+    <Report Include="SalesPerItem.rdl" />
     <Report Include="TabularSalesByLocation.rdl" />
     <Report Include="TimeReport.rdl" />
     <Report Include="TimeReportByYear.rdl" />

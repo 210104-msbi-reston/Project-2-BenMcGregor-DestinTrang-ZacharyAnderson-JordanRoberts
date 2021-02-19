@@ -55,6 +55,7 @@
                                 <TextRun>
                                   <Value>Age</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -88,6 +89,7 @@
                                 <TextRun>
                                   <Value>Count of Orders</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -121,6 +123,7 @@
                                 <TextRun>
                                   <Value>Total Revenue</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -158,7 +161,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Customer_Age.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -188,7 +193,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Count_of_Orders.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -218,7 +225,11 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Order_Price.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -259,9 +270,10 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <KeepTogether>true</KeepTogether>
             <DataSetName>DataSet1</DataSetName>
             <Height>1.2cm</Height>
-            <Width>11.52167cm</Width>
+            <Width>11.52168cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -615,7 +627,7 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Left>11.9119cm</Left>
+            <Left>11.69807cm</Left>
             <Height>23.28271cm</Height>
             <Width>10.41042cm</Width>
             <ZIndex>1</ZIndex>
@@ -682,6 +694,9 @@
                       <Style />
                     </ChartDataLabel>
                   </ChartEmptyPoints>
+                  <ChartItemInLegend>
+                    <LegendText>Total Sales</LegendText>
+                  </ChartItemInLegend>
                   <ValueAxisName>Primary</ValueAxisName>
                   <CategoryAxisName>Primary</CategoryAxisName>
                   <ChartSmartLabel>
@@ -977,7 +992,7 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Left>22.42815cm</Left>
+            <Left>22.28488cm</Left>
             <Height>23.28271cm</Height>
             <Width>12.76521cm</Width>
             <ZIndex>2</ZIndex>
@@ -994,7 +1009,7 @@
         <Height>12.9685in</Height>
         <Style />
       </Body>
-      <Width>14.39583in</Width>
+      <Width>13.79925in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

@@ -78,7 +78,7 @@
           <ConfigurationSetting>
             <Id>Project-2</Id>
             <Name>Project-2</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DESTIN\TRAININGSERVER;Integrated Security=SSPI;Initial Catalog=Project2DW</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=ZACHARY-WORK-LA\TRAININGSERVER;Integrated Security=SSPI;Initial Catalog=Project2DW</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
