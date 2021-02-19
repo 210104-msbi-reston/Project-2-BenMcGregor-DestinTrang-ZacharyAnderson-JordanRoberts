@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet4">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@orderid">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT        FactOrderItems.Order_ID, FactOrderItems.Driver_ID, FactOrderItems.Customer_ID, FactOrderItems.Start_Time, FactOrderItems.Delivery_Time, FactOrderItems.Arrival_Time, FactOrderItems.PickUp_Time, 
+                         FactOrderItems.Order_Price, FactOrderItems.Item_Quantity, FactOrderItems.Tip_Amount, FactOrderItems.Driver_Rating, FactOrderItems.Customer_Rating, DimOrderItemInfo.Item_Name, DimDrivers.Driver_Name, 
+                         DimCities.County_Name, DimCities.State_Name, DimPickUpLocations.Company_Name
+FROM            FactOrderItems INNER JOIN
+                         DimOrderItemInfo ON FactOrderItems.Order_Item_ID = DimOrderItemInfo.Item_ID INNER JOIN
+                         DimCities ON FactOrderItems.City_ID = DimCities.City_ID INNER JOIN
+                         DimPickUpLocations ON FactOrderItems.PickUp_ID = DimPickUpLocations.PickUp_ID INNER JOIN
+                         DimDrivers ON FactOrderItems.Driver_ID = DimDrivers.Driver_ID
+WHERE        (FactOrderItems.Order_ID = @orderid)</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Order_ID">
+        <DataField>Order_ID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Driver_ID">
+        <DataField>Driver_ID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Customer_ID">
+        <DataField>Customer_ID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Start_Time">
+        <DataField>Start_Time</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Delivery_Time">
+        <DataField>Delivery_Time</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Arrival_Time">
+        <DataField>Arrival_Time</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="PickUp_Time">
+        <DataField>PickUp_Time</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Order_Price">
+        <DataField>Order_Price</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Item_Quantity">
+        <DataField>Item_Quantity</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Tip_Amount">
+        <DataField>Tip_Amount</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Driver_Rating">
+        <DataField>Driver_Rating</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Customer_Rating">
+        <DataField>Customer_Rating</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Item_Name">
+        <DataField>Item_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Driver_Name">
+        <DataField>Driver_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="County_Name">
+        <DataField>County_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="State_Name">
+        <DataField>State_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Company_Name">
+        <DataField>Company_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
