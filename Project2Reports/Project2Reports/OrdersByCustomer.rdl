@@ -12,7 +12,7 @@
   <DataSets>
     <DataSet Name="DataSet1">
       <SharedDataSet>
-        <SharedDataSetReference>DataSet1</SharedDataSetReference>
+        <SharedDataSetReference>CustomerOrders</SharedDataSetReference>
         <QueryParameters>
           <QueryParameter Name="@custid">
             <Value>=Parameters!custid.Value</Value>
@@ -71,6 +71,7 @@
                                     <TextRun>
                                       <Value>Order ID: </Value>
                                       <Style>
+                                        <FontSize>12pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                         <TextDecoration>Underline</TextDecoration>
                                         <Color>Blue</Color>
@@ -79,6 +80,7 @@
                                     <TextRun>
                                       <Value>=Fields!Order_ID.Value</Value>
                                       <Style>
+                                        <FontSize>12pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                         <TextDecoration>Underline</TextDecoration>
                                         <Color>Blue</Color>
@@ -125,12 +127,18 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>Order Total: </Value>
-                                      <Style />
+                                      <Style>
+                                        <FontSize>12pt</FontSize>
+                                        <TextDecoration>Underline</TextDecoration>
+                                      </Style>
                                     </TextRun>
                                     <TextRun>
                                       <Value>=First(Fields!Order_Price.Value) + First(Fields!Tip_Amount.Value)</Value>
                                       <Style>
+                                        <FontSize>12pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
                                         <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                        <TextDecoration>Underline</TextDecoration>
                                         <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                                       </Style>
                                     </TextRun>
@@ -165,6 +173,7 @@
                                     <TextRun>
                                       <Value>=Fields!Start_Time.Value</Value>
                                       <Style>
+                                        <FontSize>12pt</FontSize>
                                         <Format>d</Format>
                                       </Style>
                                     </TextRun>
@@ -198,7 +207,9 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>=Fields!Company_Name.Value</Value>
-                                      <Style />
+                                      <Style>
+                                        <FontSize>12pt</FontSize>
+                                      </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
@@ -250,7 +261,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.49875in</Top>
+            <Top>0.83208in</Top>
             <Left>0.26958in</Left>
             <Height>1.01042in</Height>
             <Width>4.52083in</Width>
@@ -260,6 +271,58 @@
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Order History for Customer #</Value>
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                      <FontSize>14pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!custid.Value</Value>
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                      <FontSize>14pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>0.24875in</Top>
+            <Left>0.26958in</Left>
+            <Height>0.25in</Height>
+            <Width>3.84375in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Line Name="Line1">
+            <Top>0.64458in</Top>
+            <Left>0.26958in</Left>
+            <Height>0in</Height>
+            <Width>3.84375in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
         </ReportItems>
         <Height>2.87028in</Height>
         <Style />

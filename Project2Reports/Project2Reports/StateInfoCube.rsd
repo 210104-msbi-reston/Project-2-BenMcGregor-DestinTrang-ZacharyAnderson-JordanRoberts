@@ -5,17 +5,20 @@
       <DataSourceReference>Project-2-Cube</DataSourceReference>
       <DataSetParameters>
         <DataSetParameter Name="DimCitiesStateName">
+          <DefaultValue>[Dim Cities].[State Name].[All]</DefaultValue>
           <ReadOnly>false</ReadOnly>
           <Nullable>false</Nullable>
           <OmitFromQuery>false</OmitFromQuery>
           <rd:DbType>Object</rd:DbType>
-          <rd:IsMultiValued>true</rd:IsMultiValued>
         </DataSetParameter>
       </DataSetParameters>
-      <CommandText> SELECT NON EMPTY { [Measures].[Count of Orders], [Measures].[Order Price] } ON COLUMNS, NON EMPTY { ([Dim Cities].[State Name].[State Name].ALLMEMBERS * [Dim Cities].[County Name].[County Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DimCitiesStateName, CONSTRAINED) ) ON COLUMNS FROM [Project2DW]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+      <CommandText>WITH
+MEMBER [Measures].[ParamValue] as [Dim Cities].[State Name].CurrentMember.UniqueName
+ SELECT NON EMPTY { [Measures].[Order Price], [Measures].[Count of Orders], [Measures].[ParamValue] } ON COLUMNS, NON EMPTY { ([Dim Cities].[State Name].[State Name].ALLMEMBERS * [Dim Cities].[County Name].[County Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DimCitiesStateName) ) ON COLUMNS FROM [Project2DW]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
       <rd:DesignerState>
         <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
           <CommandType>MDX</CommandType>
+          <Type>Query</Type>
           <QuerySpecification xsi:type="MDXQuerySpecification">
             <Select>
               <Items>
@@ -29,6 +32,7 @@
                   </ID>
                   <ItemCaption>State Name</ItemCaption>
                   <UniqueName>true</UniqueName>
+                  <MemberValue>true</MemberValue>
                 </Item>
                 <Item>
                   <ID xsi:type="Level">
@@ -40,6 +44,23 @@
                   </ID>
                   <ItemCaption>County Name</ItemCaption>
                   <UniqueName>true</UniqueName>
+                  <MemberValue>true</MemberValue>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Order Price</MeasureName>
+                    <UniqueName>[Measures].[Order Price]</UniqueName>
+                  </ID>
+                  <ItemCaption>Order Price</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
                 </Item>
                 <Item>
                   <ID xsi:type="Measure">
@@ -59,10 +80,10 @@
                 </Item>
                 <Item>
                   <ID xsi:type="Measure">
-                    <MeasureName>Order Price</MeasureName>
-                    <UniqueName>[Measures].[Order Price]</UniqueName>
+                    <MeasureName>ParamValue</MeasureName>
+                    <UniqueName>[Measures].[ParamValue]</UniqueName>
                   </ID>
-                  <ItemCaption>Order Price</ItemCaption>
+                  <ItemCaption>ParamValue</ItemCaption>
                   <BackColor>true</BackColor>
                   <ForeColor>true</ForeColor>
                   <FontFamily>true</FontFamily>
@@ -78,28 +99,22 @@
             <AutoExecute>false</AutoExecute>
             <From>Project2DW</From>
             <Filter>
-              <FilterItems>
-                <FilterItem>
-                  <HierarchyUniqueName>[Dim Cities].[State Name]</HierarchyUniqueName>
-                  <Condition xsi:type="EqualTo">
-                    <Members />
-                    <Parametrized>true</Parametrized>
-                  </Condition>
-                </FilterItem>
-              </FilterItems>
+              <FilterItems />
             </Filter>
             <Calculations />
             <Aggregates />
-            <QueryProperties>
-              <IncludeMemberValue>true</IncludeMemberValue>
-            </QueryProperties>
+            <QueryProperties />
           </QuerySpecification>
           <Query>
-            <Statement> SELECT NON EMPTY { [Measures].[Count of Orders], [Measures].[Order Price] } ON COLUMNS, NON EMPTY { ([Dim Cities].[State Name].[State Name].ALLMEMBERS * [Dim Cities].[County Name].[County Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DimCitiesStateName, CONSTRAINED) ) ON COLUMNS FROM [Project2DW]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+            <Statement>WITH
+MEMBER [Measures].[ParamValue] as [Dim Cities].[State Name].CurrentMember.UniqueName
+ SELECT NON EMPTY { [Measures].[Order Price], [Measures].[Count of Orders], [Measures].[ParamValue] } ON COLUMNS, NON EMPTY { ([Dim Cities].[State Name].[State Name].ALLMEMBERS * [Dim Cities].[County Name].[County Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DimCitiesStateName) ) ON COLUMNS FROM [Project2DW]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
             <ParameterDefinitions>
               <ParameterDefinition>
                 <Name>DimCitiesStateName</Name>
-                <DefaultValues />
+                <DefaultValues>
+                  <DefaultValue>[Dim Cities].[State Name].[All]</DefaultValue>
+                </DefaultValues>
                 <Caption>State Name</Caption>
                 <HierarchyUniqueName>[Dim Cities].[State Name]</HierarchyUniqueName>
                 <ParameterValuesQuery>
@@ -108,7 +123,6 @@
                     <ReferencedParameters />
                   </ParameterizedStatement>
                 </ParameterValuesQuery>
-                <MultipleValues>true</MultipleValues>
               </ParameterDefinition>
             </ParameterDefinitions>
           </Query>
@@ -124,12 +138,16 @@
         <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Cities].[County Name].[County Name]" /&gt;</DataField>
         <rd:TypeName>System.String</rd:TypeName>
       </Field>
+      <Field Name="Order_Price">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Order Price]" /&gt;</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
       <Field Name="Count_of_Orders">
         <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Count of Orders]" /&gt;</DataField>
         <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
-      <Field Name="Order_Price">
-        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Order Price]" /&gt;</DataField>
+      <Field Name="ParamValue">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParamValue]" /&gt;</DataField>
         <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
     </Fields>

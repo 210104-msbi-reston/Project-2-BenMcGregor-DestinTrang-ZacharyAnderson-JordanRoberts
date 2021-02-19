@@ -35,6 +35,10 @@
           <DataField>Order_Price</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="ParamValue">
+          <DataField>ParamValue</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
     <DataSet Name="DataSet2">
@@ -46,12 +50,16 @@
           <DataField>State_Name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Count_of_Orders">
+          <DataField>Count_of_Orders</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="Order_Price">
           <DataField>Order_Price</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Count_of_Orders">
-          <DataField>Count_of_Orders</DataField>
+        <Field Name="ParamValue">
+          <DataField>ParamValue</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Total_Orders">
@@ -115,7 +123,9 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -149,7 +159,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -184,7 +194,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -219,7 +229,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -758,7 +768,9 @@
                                 </Style>
                               </TextRun>
                             </TextRuns>
-                            <Style />
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
                           </Paragraph>
                         </Paragraphs>
                         <rd:DefaultName>Textbox25</rd:DefaultName>
@@ -794,7 +806,9 @@
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
-                                <Style />
+                                <Style>
+                                  <TextAlign>Center</TextAlign>
+                                </Style>
                               </Paragraph>
                             </Paragraphs>
                             <rd:DefaultName>Textbox31</rd:DefaultName>
@@ -859,7 +873,7 @@
                                 <ReportName>SalesByCounty</ReportName>
                                 <Parameters>
                                   <Parameter Name="state">
-                                    <Value>=Fields!State_Name.Value</Value>
+                                    <Value>=Fields!ParamValue.Value</Value>
                                   </Parameter>
                                 </Parameters>
                               </Drillthrough>
@@ -977,6 +991,15 @@
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>DataSet1</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!Count_of_Orders.Value</FilterExpression>
+                <Operator>GreaterThan</Operator>
+                <FilterValues>
+                  <FilterValue DataType="Integer">0</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
             <Height>0.75in</Height>
             <Width>6.60417in</Width>
             <Style>
@@ -985,6 +1008,37 @@
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Top States for Sales</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Left>6.67361in</Left>
+            <Height>0.25in</Height>
+            <Width>1.47917in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
           <Chart Name="Chart2">
             <ChartCategoryHierarchy>
               <ChartMembers>
@@ -995,7 +1049,7 @@
                     </GroupExpressions>
                     <Filters>
                       <Filter>
-                        <FilterExpression>=Fields!Count_of_Orders.Value</FilterExpression>
+                        <FilterExpression>=Fields!Order_Price.Value</FilterExpression>
                         <Operator>TopN</Operator>
                         <FilterValues>
                           <FilterValue DataType="Integer">10</FilterValue>
@@ -1021,26 +1075,26 @@
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Count_of_Orders">
+                <ChartSeries Name="Order_Price">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Round(Sum(Fields!Order_Price.Value),2)</Y>
+                        <Y>=Sum(Fields!Order_Price.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style>
-                          <FontWeight>Bold</FontWeight>
+                          <Format>'$'#,0.00;('$'#,0.00)</Format>
+                          <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                         </Style>
-                        <Label>="$" &amp; Round(Sum(Fields!Order_Price.Value),2)</Label>
+                        <UseValueAsLabel>true</UseValueAsLabel>
                         <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style>
-                        <Color>DarkViolet</Color>
-                        <BackgroundGradientType>LeftRight</BackgroundGradientType>
-                        <BackgroundGradientEndColor>Plum</BackgroundGradientEndColor>
+                        <Color>Orange</Color>
+                        <BackgroundGradientType>None</BackgroundGradientType>
+                        <BackgroundGradientEndColor>DarkViolet</BackgroundGradientEndColor>
                       </Style>
                       <ChartMarker>
-                        <Size>1pt</Size>
                         <Style />
                       </ChartMarker>
                       <DataElementOutput>Output</DataElementOutput>
@@ -1194,13 +1248,12 @@
                       <Color>#5c5c5c</Color>
                     </Style>
                     <ChartAxisTitle>
-                      <Caption />
+                      <Caption>Sales ($1000s)</Caption>
                       <Style>
                         <FontSize>9pt</FontSize>
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
-                    <Interval>100000</Interval>
                     <ChartMajorGridLines>
                       <Style>
                         <Border>
@@ -1321,9 +1374,9 @@
             <DataSetName>DataSet2</DataSetName>
             <Top>0.31944in</Top>
             <Left>6.67361in</Left>
-            <Height>5.00917in</Height>
-            <Width>4.25347in</Width>
-            <ZIndex>1</ZIndex>
+            <Height>3.5625in</Height>
+            <Width>5.48958in</Width>
+            <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -1333,37 +1386,6 @@
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
-          <Textbox Name="Textbox2">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Top States for Sales</Value>
-                    <Style>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Left>6.67361in</Left>
-            <Height>0.25in</Height>
-            <Width>1.47917in</Width>
-            <ZIndex>2</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
         </ReportItems>
         <Height>17.14583in</Height>
         <Style />

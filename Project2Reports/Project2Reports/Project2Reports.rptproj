@@ -50,11 +50,10 @@
   </PropertyGroup>
   <ItemGroup>
     <DataSet Include="Counties.rsd" />
+    <DataSet Include="CustomerOrders.rsd" />
     <DataSet Include="DataSet1.rsd" />
-    <DataSet Include="DataSet2.rsd" />
-    <DataSet Include="DataSet3.rsd" />
-    <DataSet Include="DataSet4.rsd" />
     <DataSet Include="LocationSalesData.rsd" />
+    <DataSet Include="OrderDetails.rsd" />
     <DataSet Include="OrdersByYear.rsd" />
     <DataSet Include="SalesByYearByState.rsd" />
     <DataSet Include="SalesOverTime.rsd" />
@@ -62,6 +61,8 @@
     <DataSet Include="StateInfoCube.rsd" />
     <DataSet Include="States.rsd" />
     <DataSet Include="StateSalesByMonth.rsd" />
+    <DataSet Include="StatesList.rsd" />
+    <DataSet Include="StatesREAL.rsd" />
     <DataSet Include="TotalOrders.rsd" />
     <DataSet Include="Totals.rsd" />
   </ItemGroup>

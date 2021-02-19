@@ -19,12 +19,12 @@
           <DataField>State_Name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Order_Price">
-          <DataField>Order_Price</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="Count_of_Orders">
           <DataField>Count_of_Orders</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParamValue">
+          <DataField>ParamValue</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
@@ -130,7 +130,7 @@
                           <ReportName>SalesByCounty</ReportName>
                           <Parameters>
                             <Parameter Name="state">
-                              <Value>=Fields!State_Name.Value</Value>
+                              <Value>=Fields!ParamValue.Value</Value>
                             </Parameter>
                           </Parameters>
                         </Drillthrough>
