@@ -276,7 +276,9 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Count_of_Orders1</rd:DefaultName>
@@ -316,7 +318,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -353,7 +355,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -526,7 +528,9 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Count_of_Orders2</rd:DefaultName>
@@ -568,7 +572,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -607,7 +611,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -893,7 +897,9 @@
                                 </Style>
                               </TextRun>
                             </TextRuns>
-                            <Style />
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
                           </Paragraph>
                         </Paragraphs>
                         <rd:DefaultName>State_Name</rd:DefaultName>
@@ -993,7 +999,9 @@
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
-                                <Style />
+                                <Style>
+                                  <TextAlign>Center</TextAlign>
+                                </Style>
                               </Paragraph>
                             </Paragraphs>
                             <rd:DefaultName>County_Name</rd:DefaultName>
@@ -1426,7 +1434,7 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>17.14583in</Height>
+        <Height>3.975in</Height>
         <Style>
           <BackgroundColor>#f6f6f6</BackgroundColor>
         </Style>
@@ -1434,7 +1442,7 @@
       <Width>12.38042in</Width>
       <Page>
         <PageHeader>
-          <Height>1.71389in</Height>
+          <Height>2.45556in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1442,7 +1450,7 @@
               <Source>Embedded</Source>
               <Value>PandExLogo</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.12in</Top>
+              <Top>0.05056in</Top>
               <Left>4.59014in</Left>
               <Height>0.96333in</Height>
               <Width>3.01667in</Width>
@@ -1505,9 +1513,9 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox6</rd:DefaultName>
-              <Top>1.15278in</Top>
+              <Top>1.08334in</Top>
               <Left>3.88181in</Left>
-              <Height>0.49167in</Height>
+              <Height>0.56111in</Height>
               <Width>4.575in</Width>
               <ZIndex>2</ZIndex>
               <Style>

@@ -63,6 +63,7 @@
     <DataSet Include="SalesOverTime.rsd" />
     <DataSet Include="SalesPerCompany.rsd" />
     <DataSet Include="SalesPerItem.rsd" />
+    <DataSet Include="SalesPerItemPerCompany.rsd" />
     <DataSet Include="StateInfo.rsd" />
     <DataSet Include="StateInfoCube.rsd" />
     <DataSet Include="States.rsd" />
