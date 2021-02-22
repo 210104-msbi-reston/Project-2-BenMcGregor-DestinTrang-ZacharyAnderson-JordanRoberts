@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-KHN5O1K"
   DTS:CreatorName="DESKTOP-KHN5O1K\mixme"
-  DTS:DTSID="{61949FB0-0463-40F3-9294-2678C06D7BA5}"
+  DTS:DTSID="{EF2441A6-4DB1-4D02-84BD-8825B75AED38}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.150"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="DW-Project2"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{80B7EF67-A06E-4E5B-9B47-D7A904BD7B81}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{184A1079-2A19-4399-AE8A-73A92965CFC4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

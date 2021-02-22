@@ -17,16 +17,6 @@
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
-    <ProjectItem>
-      <Name>Project2DW 1.cube</Name>
-      <FullPath>Project2DW 1.cube</FullPath>
-      <Dependencies>
-        <ProjectItem>
-          <Name>Project2DW 1.partitions</Name>
-          <FullPath>Project2DW 1.partitions</FullPath>
-        </ProjectItem>
-      </Dependencies>
-    </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>
@@ -78,7 +68,7 @@
           <ConfigurationSetting>
             <Id>Project-2</Id>
             <Name>Project-2</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=ZACHARY-WORK-LA\TRAININGSERVER;Integrated Security=SSPI;Initial Catalog=Project2DW</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DESKTOP-KHN5O1K\TRAININGSERVER;Integrated Security=SSPI;Initial Catalog=Project2DW</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
