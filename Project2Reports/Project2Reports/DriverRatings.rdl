@@ -4,7 +4,7 @@
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="DataSourceD">
-      <DataSourceReference>DataSourceD</DataSourceReference>
+      <DataSourceReference>Datasource1</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>8c0aa84c-a9a5-4ee7-926b-a5dd697c2191</rd:DataSourceID>
     </DataSource>
@@ -793,7 +793,11 @@ GROUP BY DimCustomers.Customer_ID</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet2</DataSetName>
-            <Top>0in</Top>
+            <SortExpressions>
+              <SortExpression>
+                <Value>=Fields!Customer_ID.Value</Value>
+              </SortExpression>
+            </SortExpressions>
             <Left>6.99924in</Left>
             <Height>0.43in</Height>
             <Width>6.24167in</Width>

@@ -172,7 +172,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Count_of_Orders.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -308,6 +310,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <KeepTogether>true</KeepTogether>
             <DataSetName>DataSet1</DataSetName>
             <Top>0.06944in</Top>
             <Left>0.09958in</Left>
@@ -331,6 +334,7 @@
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!State_Name.Value</Value>
+                      <Direction>Descending</Direction>
                     </SortExpression>
                   </SortExpressions>
                   <Label>=Fields!State_Name.Value</Label>

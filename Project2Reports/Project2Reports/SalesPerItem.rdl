@@ -40,7 +40,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.33333in</Width>
+                  <Width>1.9375in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1in</Width>
@@ -311,7 +311,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>1in</Size>
+                    <Size>1.38542in</Size>
                     <CellContents>
                       <Textbox Name="Textbox32">
                         <CanGrow>true</CanGrow>
@@ -365,7 +365,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>1in</Size>
+                    <Size>1.38542in</Size>
                     <CellContents>
                       <Textbox Name="Item_Name">
                         <CanGrow>true</CanGrow>
@@ -408,10 +408,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <KeepTogether>true</KeepTogether>
             <DataSetName>DataSet1</DataSetName>
             <Left>0.11542in</Left>
             <Height>0.5in</Height>
-            <Width>4.33333in</Width>
+            <Width>4.32291in</Width>
             <Style>
               <Border>
                 <Style>None</Style>

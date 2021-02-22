@@ -578,7 +578,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Count(Fields!Order_ID.Value)</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -652,7 +654,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Count(Fields!Order_ID.Value)</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -726,7 +730,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Count(Fields!Order_ID.Value)</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -800,7 +806,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Count(Fields!Order_ID.Value)</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -874,7 +882,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Count(Fields!Order_ID.Value)</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -1821,6 +1831,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <KeepTogether>true</KeepTogether>
             <DataSetName>DataSet1</DataSetName>
             <Top>2.38889in</Top>
             <Left>0.12504in</Left>
@@ -2177,7 +2188,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Busiest Order Times</Value>
+                    <Value>Busiest Times for Orders</Value>
                     <Style>
                       <FontFamily>Arial</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -2211,7 +2222,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Sales by Quarter ($1000s)</Value>
+                    <Value>Sales by Month ($1000s)</Value>
                     <Style>
                       <FontFamily>Arial</FontFamily>
                       <FontWeight>Bold</FontWeight>

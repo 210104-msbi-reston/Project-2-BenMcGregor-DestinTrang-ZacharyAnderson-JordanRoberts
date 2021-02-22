@@ -305,7 +305,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Round((Sum(Fields!Count_of_Orders.Value)/50999*100), 2)</Value>
+                                  <Value>=Round((Sum(Fields!Count_of_Orders.Value)/100719*100), 2)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                   </Style>
@@ -1041,6 +1041,13 @@
                 <Operator>GreaterThan</Operator>
                 <FilterValues>
                   <FilterValue DataType="Integer">0</FilterValue>
+                </FilterValues>
+              </Filter>
+              <Filter>
+                <FilterExpression>=Fields!State_Name.Value</FilterExpression>
+                <Operator>NotEqual</Operator>
+                <FilterValues>
+                  <FilterValue>District of Columbia</FilterValue>
                 </FilterValues>
               </Filter>
             </Filters>

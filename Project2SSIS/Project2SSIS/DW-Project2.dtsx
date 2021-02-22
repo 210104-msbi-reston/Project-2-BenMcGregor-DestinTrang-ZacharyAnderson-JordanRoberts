@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DW-Project2"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{184A1079-2A19-4399-AE8A-73A92965CFC4}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{A91C4598-7DCD-4F48-BF58-994CC38AD8D3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5859,125 +5859,125 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Lookup No Match Output5]"
+              refId="Package\Data Flow Task.Paths[Lookup No Match Output]"
               endId="Package\Data Flow Task\FactOrderItems.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\Data Flow Task\Lookup 5.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup No Match Output]"
+              refId="Package\Data Flow Task.Paths[Lookup No Match Output1]"
               endId="Package\Data Flow Task\DimCities.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\Data Flow Task\Lookup.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup No Match Output1]"
+              refId="Package\Data Flow Task.Paths[Lookup No Match Output2]"
               endId="Package\Data Flow Task\DimCustomers.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\Data Flow Task\Lookup 1.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup No Match Output4]"
+              refId="Package\Data Flow Task.Paths[Lookup No Match Output3]"
               endId="Package\Data Flow Task\DimPickupLocations.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\Data Flow Task\Lookup 4.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup No Match Output2]"
+              refId="Package\Data Flow Task.Paths[Lookup No Match Output4]"
               endId="Package\Data Flow Task\DimDrivers.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\Data Flow Task\Lookup 2.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup No Match Output3]"
+              refId="Package\Data Flow Task.Paths[Lookup No Match Output5]"
               endId="Package\Data Flow Task\DimOrderItemInfo.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\Data Flow Task\Lookup 3.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Merge Join Output4]"
-              endId="Package\Data Flow Task\Sort.Inputs[Sort Input]"
-              name="Merge Join Output"
-              startId="Package\Data Flow Task\Merge Join 4.Outputs[Merge Join Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Merge Join Output]"
-              endId="Package\Data Flow Task\Merge Join 1.Inputs[Merge Join Left Input]"
-              name="Merge Join Output"
-              startId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Merge Join Output1]"
-              endId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
-              name="Merge Join Output"
-              startId="Package\Data Flow Task\Merge Join 1.Outputs[Merge Join Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Merge Join Output2]"
-              endId="Package\Data Flow Task\Lookup 2.Inputs[Lookup Input]"
-              name="Merge Join Output"
-              startId="Package\Data Flow Task\Merge Join 2.Outputs[Merge Join Output]" />
-            <path
               refId="Package\Data Flow Task.Paths[Merge Join Output5]"
+              endId="Package\Data Flow Task\Lookup 4.Inputs[Lookup Input]"
+              name="Merge Join Output"
+              startId="Package\Data Flow Task\Merge Join 3.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Merge Join Output4]"
               endId="Package\Data Flow Task\Lookup 5.Inputs[Lookup Input]"
               name="Merge Join Output"
               startId="Package\Data Flow Task\Merge Join 5.Outputs[Merge Join Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Merge Join Output3]"
-              endId="Package\Data Flow Task\Lookup 4.Inputs[Lookup Input]"
+              endId="Package\Data Flow Task\Lookup 2.Inputs[Lookup Input]"
               name="Merge Join Output"
-              startId="Package\Data Flow Task\Merge Join 3.Outputs[Merge Join Output]" />
+              startId="Package\Data Flow Task\Merge Join 2.Outputs[Merge Join Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output11]"
-              endId="Package\Data Flow Task\Merge Join 5.Inputs[Merge Join Right Input]"
-              name="OLE DB Source Output"
-              startId="Package\Data Flow Task\Pickup Locations - CityID.Outputs[OLE DB Source Output]" />
+              refId="Package\Data Flow Task.Paths[Merge Join Output2]"
+              endId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
+              name="Merge Join Output"
+              startId="Package\Data Flow Task\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Merge Join Output1]"
+              endId="Package\Data Flow Task\Merge Join 1.Inputs[Merge Join Left Input]"
+              name="Merge Join Output"
+              startId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Merge Join Output]"
+              endId="Package\Data Flow Task\Sort.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Data Flow Task\Merge Join 4.Outputs[Merge Join Output]" />
             <path
               refId="Package\Data Flow Task.Paths[OLE DB Source Output10]"
-              endId="Package\Data Flow Task\Merge Join 4.Inputs[Merge Join Right Input]"
+              endId="Package\Data Flow Task\Merge Join 3.Inputs[Merge Join Right Input]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Task\Order Items.Outputs[OLE DB Source Output]" />
+              startId="Package\Data Flow Task\Companies.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[OLE DB Source Output9]"
-              endId="Package\Data Flow Task\Merge Join 4.Inputs[Merge Join Left Input]"
-              name="OLE DB Source Output"
-              startId="Package\Data Flow Task\Orders.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output6]"
-              endId="Package\Data Flow Task\Lookup 3.Inputs[Lookup Input]"
-              name="OLE DB Source Output"
-              startId="Package\Data Flow Task\Order Item Info.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output7]"
-              endId="Package\Data Flow Task\Merge Join 3.Inputs[Merge Join Left Input]"
-              name="OLE DB Source Output"
-              startId="Package\Data Flow Task\Pickup Locations.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output5]"
-              endId="Package\Data Flow Task\Merge Join 2.Inputs[Merge Join Right Input]"
-              name="OLE DB Source Output"
-              startId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output4]"
-              endId="Package\Data Flow Task\Merge Join 2.Inputs[Merge Join Left Input]"
-              name="OLE DB Source Output"
-              startId="Package\Data Flow Task\Drivers.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output3]"
-              endId="Package\Data Flow Task\Lookup 1.Inputs[Lookup Input]"
-              name="OLE DB Source Output"
-              startId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output2]"
-              endId="Package\Data Flow Task\Merge Join 1.Inputs[Merge Join Right Input]"
-              name="OLE DB Source Output"
-              startId="Package\Data Flow Task\States.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
               endId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow Task\Counties.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[OLE DB Source Output8]"
-              endId="Package\Data Flow Task\Merge Join 3.Inputs[Merge Join Right Input]"
+              endId="Package\Data Flow Task\Merge Join 1.Inputs[Merge Join Right Input]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Task\Companies.Outputs[OLE DB Source Output]" />
+              startId="Package\Data Flow Task\States.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output7]"
+              endId="Package\Data Flow Task\Lookup 1.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output6]"
+              endId="Package\Data Flow Task\Merge Join 2.Inputs[Merge Join Left Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Drivers.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Merge Join 5.Inputs[Merge Join Right Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Pickup Locations - CityID.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output4]"
+              endId="Package\Data Flow Task\Merge Join 3.Inputs[Merge Join Left Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Pickup Locations.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output3]"
+              endId="Package\Data Flow Task\Lookup 3.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Order Item Info.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output2]"
+              endId="Package\Data Flow Task\Merge Join 4.Inputs[Merge Join Left Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Orders.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+              endId="Package\Data Flow Task\Merge Join 4.Inputs[Merge Join Right Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Order Items.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output11]"
               endId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow Task\Cities.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output5]"
+              endId="Package\Data Flow Task\Merge Join 2.Inputs[Merge Join Right Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Sort Output]"
               endId="Package\Data Flow Task\Merge Join 5.Inputs[Merge Join Left Input]"
@@ -6033,7 +6033,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           Id="Package\Data Flow Task\Merge Join"
           TopLeft="5.5,107.5" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output11]"
           TopLeft="70.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6067,7 +6067,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output9]"
           TopLeft="242.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6105,7 +6105,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           Id="Package\Data Flow Task\Merge Join 1"
           TopLeft="181,209.5" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output2]"
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output8]"
           TopLeft="250.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6139,7 +6139,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Merge Join Output]"
+          Id="Package\Data Flow Task.Paths[Merge Join Output1]"
           TopLeft="70.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6177,7 +6177,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           Id="Package\Data Flow Task\Lookup"
           TopLeft="194,311.5" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Merge Join Output1]"
+          Id="Package\Data Flow Task.Paths[Merge Join Output2]"
           TopLeft="250.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6199,7 +6199,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output1]"
           TopLeft="250.5,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6223,12 +6223,12 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
-          Text="Group "
+          Text="DimCities"
           ParentId="Package\Data Flow Task"
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="326,510"
-          Size="70,43"
+          Size="82,43"
           Id="4edc0c0c-5877-401c-85f2-bfa4cf58a829"
           TopLeft="63,63">
           <GroupLayout.ChildrenIds>
@@ -6237,14 +6237,14 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
             <s:String>Package\Data Flow Task\Counties</s:String>
             <s:String>Package\Data Flow Task\States</s:String>
             <s:String>Package\Data Flow Task\Merge Join</s:String>
-            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output]</s:String>
-            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output1]</s:String>
+            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output11]</s:String>
+            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output9]</s:String>
             <s:String>Package\Data Flow Task\Merge Join 1</s:String>
-            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output2]</s:String>
-            <s:String>Package\Data Flow Task.Paths[Merge Join Output]</s:String>
-            <s:String>Package\Data Flow Task\Lookup</s:String>
+            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output8]</s:String>
             <s:String>Package\Data Flow Task.Paths[Merge Join Output1]</s:String>
-            <s:String>Package\Data Flow Task.Paths[Lookup No Match Output]</s:String>
+            <s:String>Package\Data Flow Task\Lookup</s:String>
+            <s:String>Package\Data Flow Task.Paths[Merge Join Output2]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Lookup No Match Output1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -6260,7 +6260,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           Id="Package\Data Flow Task\Lookup 1"
           TopLeft="47.5,133.5" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output3]"
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output7]"
           TopLeft="70,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6290,13 +6290,11 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup No Match Output1]"
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output2]"
           TopLeft="108.5,175.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6332,7 +6330,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
-          Text="Group "
+          Text="DimCustomers"
           ParentId="Package\Data Flow Task"
           HeaderHeight="43"
           IsExpanded="False"
@@ -6344,8 +6342,8 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
             <s:String>Package\Data Flow Task\Customers</s:String>
             <s:String>Package\Data Flow Task\DimCustomers</s:String>
             <s:String>Package\Data Flow Task\Lookup 1</s:String>
-            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output3]</s:String>
-            <s:String>Package\Data Flow Task.Paths[Lookup No Match Output1]</s:String>
+            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output7]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Lookup No Match Output2]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -6365,7 +6363,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           Id="Package\Data Flow Task\Cars"
           TopLeft="226.5,11.5" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output4]"
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output6]"
           TopLeft="61.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6395,9 +6393,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6431,9 +6427,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -6441,7 +6435,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           Id="Package\Data Flow Task\Lookup 2"
           TopLeft="70.5,224.5" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Merge Join Output2]"
+          Id="Package\Data Flow Task.Paths[Merge Join Output3]"
           TopLeft="185,181.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6471,13 +6465,11 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup No Match Output2]"
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output4]"
           TopLeft="131.5,266.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6513,7 +6505,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
-          Text="Group "
+          Text="DimDrivers"
           ParentId="Package\Data Flow Task"
           HeaderHeight="43"
           IsExpanded="False"
@@ -6526,11 +6518,11 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
             <s:String>Package\Data Flow Task\DimDrivers</s:String>
             <s:String>Package\Data Flow Task\Merge Join 2</s:String>
             <s:String>Package\Data Flow Task\Cars</s:String>
-            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output4]</s:String>
+            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output6]</s:String>
             <s:String>Package\Data Flow Task.Paths[OLE DB Source Output5]</s:String>
             <s:String>Package\Data Flow Task\Lookup 2</s:String>
-            <s:String>Package\Data Flow Task.Paths[Merge Join Output2]</s:String>
-            <s:String>Package\Data Flow Task.Paths[Lookup No Match Output2]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Merge Join Output3]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Lookup No Match Output4]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -6546,7 +6538,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           Id="Package\Data Flow Task\Lookup 3"
           TopLeft="5.5,115.5" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output6]"
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output3]"
           TopLeft="91.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6576,13 +6568,11 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup No Match Output3]"
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output5]"
           TopLeft="66.5,157.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6618,7 +6608,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
-          Text="Group "
+          Text="DimOrderItemInfo"
           ParentId="Package\Data Flow Task"
           HeaderHeight="43"
           IsExpanded="False"
@@ -6630,8 +6620,8 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
             <s:String>Package\Data Flow Task\DimOrderItemInfo</s:String>
             <s:String>Package\Data Flow Task\Order Item Info</s:String>
             <s:String>Package\Data Flow Task\Lookup 3</s:String>
-            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output6]</s:String>
-            <s:String>Package\Data Flow Task.Paths[Lookup No Match Output3]</s:String>
+            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output3]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Lookup No Match Output5]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -6655,7 +6645,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           Id="Package\Data Flow Task\Companies"
           TopLeft="318.5,5.5" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output7]"
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output4]"
           TopLeft="84,53.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6689,7 +6679,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output8]"
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output10]"
           TopLeft="383.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6723,7 +6713,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Merge Join Output3]"
+          Id="Package\Data Flow Task.Paths[Merge Join Output5]"
           TopLeft="206,158.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6757,7 +6747,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup No Match Output4]"
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output3]"
           TopLeft="146.5,237.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6793,12 +6783,12 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
-          Text="Group "
+          Text="DimPickupLocations"
           ParentId="Package\Data Flow Task"
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="454,376"
-          Size="70,43"
+          Size="131,43"
           Id="623c64b2-5fdc-4706-a906-bfbe31c5b2e1"
           TopLeft="60,166">
           <GroupLayout.ChildrenIds>
@@ -6807,16 +6797,16 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
             <s:String>Package\Data Flow Task\Lookup 4</s:String>
             <s:String>Package\Data Flow Task\Merge Join 3</s:String>
             <s:String>Package\Data Flow Task\Companies</s:String>
-            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output7]</s:String>
-            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output8]</s:String>
-            <s:String>Package\Data Flow Task.Paths[Merge Join Output3]</s:String>
-            <s:String>Package\Data Flow Task.Paths[Lookup No Match Output4]</s:String>
+            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output4]</s:String>
+            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output10]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Merge Join Output5]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Lookup No Match Output3]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
           Size="152,42"
           Id="Package\Data Flow Task\FactOrderItems"
-          TopLeft="89.5,253.5" />
+          TopLeft="382.5,273.5" />
         <NodeLayout
           Size="111,42"
           Id="Package\Data Flow Task\Orders"
@@ -6830,7 +6820,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           Id="Package\Data Flow Task\Merge Join 4"
           TopLeft="115.5,62.5" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output9]"
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output2]"
           TopLeft="116.5,26.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6858,7 +6848,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output10]"
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
           TopLeft="251.5,29.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6894,7 +6884,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           Id="Package\Data Flow Task\Sort"
           TopLeft="264,127" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Merge Join Output4]"
+          Id="Package\Data Flow Task.Paths[Merge Join Output]"
           TopLeft="254.5,83.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6926,7 +6916,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           Id="Package\Data Flow Task\Merge Join 5"
           TopLeft="422,195" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output11]"
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="491,106.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6984,33 +6974,33 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
         <NodeLayout
           Size="122,42"
           Id="Package\Data Flow Task\Lookup 5"
-          TopLeft="100,160" />
+          TopLeft="201,204" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Merge Join Output5]"
+          Id="Package\Data Flow Task.Paths[Merge Join Output4]"
           TopLeft="422,216">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-200,-35"
+              EndConnector="-99,9"
               Start="0,0"
-              End="-192.5,-35">
+              End="-91.5,9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-96,0" />
+                    End="-45.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-96,0"
-                    Point2="-100,0"
-                    Point3="-100,-4" />
+                    Point1="-45.5,0"
+                    Point2="-49.5,0"
+                    Point3="-49.5,4" />
                   <mssgle:LineSegment
-                    End="-100,-31" />
+                    End="-49.5,5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-100,-31"
-                    Point2="-100,-35"
-                    Point3="-104,-35" />
+                    Point1="-49.5,5"
+                    Point2="-49.5,9"
+                    Point3="-53.5,9" />
                   <mssgle:LineSegment
-                    End="-192.5,-35" />
+                    End="-91.5,9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7020,54 +7010,66 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup No Match Output5]"
-          TopLeft="163.25,202">
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
+          TopLeft="262,246">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.5"
+              EndConnector="196.5,27.5"
               Start="0,0"
-              End="0,44">
+              End="196.5,20">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44" />
+                    End="0,9.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.75"
+                    Point2="0,13.75"
+                    Point3="4,13.75" />
+                  <mssgle:LineSegment
+                    End="192.5,13.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="192.5,13.75"
+                    Point2="196.5,13.75"
+                    Point3="196.5,17.75" />
+                  <mssgle:LineSegment
+                    End="196.5,20" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,16.1953125,111.6127734375,11.609375"
+              BoundingBox="42.44361328125,18.75,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
-          Text="Group "
+          Text="FactOrderItems"
           ParentId="Package\Data Flow Task"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="594,350"
-          Size="594,393"
+          PanelSize="594,338"
+          Size="594,382"
           Id="974ab525-dd8d-4680-9b7c-56b9eb39e311"
-          TopLeft="412,184">
+          TopLeft="394,143">
           <GroupLayout.ChildrenIds>
             <s:String>Package\Data Flow Task\FactOrderItems</s:String>
             <s:String>Package\Data Flow Task\Orders</s:String>
             <s:String>Package\Data Flow Task\Order Items</s:String>
             <s:String>Package\Data Flow Task\Merge Join 4</s:String>
-            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output9]</s:String>
-            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output10]</s:String>
+            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output2]</s:String>
+            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output1]</s:String>
             <s:String>Package\Data Flow Task\Pickup Locations - CityID</s:String>
             <s:String>Package\Data Flow Task\Sort</s:String>
-            <s:String>Package\Data Flow Task.Paths[Merge Join Output4]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Merge Join Output]</s:String>
             <s:String>Package\Data Flow Task\Merge Join 5</s:String>
-            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output11]</s:String>
+            <s:String>Package\Data Flow Task.Paths[OLE DB Source Output]</s:String>
             <s:String>Package\Data Flow Task.Paths[Sort Output]</s:String>
             <s:String>Package\Data Flow Task\Lookup 5</s:String>
-            <s:String>Package\Data Flow Task.Paths[Merge Join Output5]</s:String>
-            <s:String>Package\Data Flow Task.Paths[Lookup No Match Output5]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Merge Join Output4]</s:String>
+            <s:String>Package\Data Flow Task.Paths[Lookup No Match Output]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>
@@ -7092,7 +7094,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -7102,7 +7104,7 @@ where [refTable].[Order_ID] = ? and [refTable].[Order_Item_ID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -2,7 +2,7 @@
 <RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Project-2-Cube">
   <ConnectionProperties>
     <Extension>OLEDB-MD</Extension>
-    <ConnectString>Data Source=ZACHARY-WORK-LA\TRAININGSERVER;Initial Catalog=Project-2-Cube</ConnectString>
+    <ConnectString>Data Source=DESKTOP-KHN5O1K\TRAININGSERVER;Initial Catalog=Project-2-Cube</ConnectString>
     <IntegratedSecurity>true</IntegratedSecurity>
   </ConnectionProperties>
   <DataSourceID>f845c848-e1de-4ffd-a007-4db8174bcebe</DataSourceID>

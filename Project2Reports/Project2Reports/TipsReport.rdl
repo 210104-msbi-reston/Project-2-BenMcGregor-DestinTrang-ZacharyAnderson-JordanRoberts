@@ -288,6 +288,13 @@ ORDER BY Expr3 DESC</CommandText>
                                     <Format>0.00;(0.00)</Format>
                                   </Style>
                                 </TextRun>
+                                <TextRun>
+                                  <Value>%</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <Format>0.00;(0.00)</Format>
+                                  </Style>
+                                </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
@@ -538,7 +545,7 @@ ORDER BY Expr3 DESC</CommandText>
                           </TablixMembers>
                           <Visibility>
                             <Hidden>true</Hidden>
-                            <ToggleItem>City_Name1</ToggleItem>
+                            <ToggleItem>State_Name1</ToggleItem>
                           </Visibility>
                           <DataElementName>Detail_Collection</DataElementName>
                           <DataElementOutput>Output</DataElementOutput>
@@ -554,6 +561,7 @@ ORDER BY Expr3 DESC</CommandText>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <KeepTogether>true</KeepTogether>
             <DataSetName>DataSet1</DataSetName>
             <Left>0.1075in</Left>
             <Height>0.43in</Height>

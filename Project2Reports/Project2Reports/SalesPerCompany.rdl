@@ -137,7 +137,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Sum(Fields!Item_Quantity.Value)</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -417,7 +419,17 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <KeepTogether>true</KeepTogether>
             <DataSetName>DataSet2</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!Company_Name.Value</FilterExpression>
+                <Operator>NotEqual</Operator>
+                <FilterValues>
+                  <FilterValue>Popeyes</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
             <SortExpressions>
               <SortExpression>
                 <Value>=Fields!Company_Name.Value</Value>
@@ -772,6 +784,15 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet2</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!Company_Name.Value</FilterExpression>
+                <Operator>NotEqual</Operator>
+                <FilterValues>
+                  <FilterValue>Popeyes</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
             <Left>3.99111in</Left>
             <Height>5.4375in</Height>
             <Width>3in</Width>

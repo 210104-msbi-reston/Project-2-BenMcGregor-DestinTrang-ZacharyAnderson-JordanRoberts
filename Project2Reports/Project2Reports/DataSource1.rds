@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DataSource1">
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Datasource1">
   <ConnectionProperties>
     <Extension>SQL</Extension>
-    <ConnectString>Data Source=ZACHARY-WORK-LA\TRAININGSERVER;Initial Catalog=Project2DW</ConnectString>
+    <ConnectString>Data Source=DESKTOP-KHN5O1K\TRAININGSERVER;Initial Catalog=Project2DW</ConnectString>
     <IntegratedSecurity>true</IntegratedSecurity>
   </ConnectionProperties>
   <DataSourceID>da0a1dc2-a1ea-4295-a390-3308ad284f98</DataSourceID>
