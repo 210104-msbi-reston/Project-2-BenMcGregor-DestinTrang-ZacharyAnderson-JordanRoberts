@@ -6,11 +6,11 @@ Pandex does not currently have a singular database from which to track and analy
 
 
 ## Technologies Used
-SQL Server Management Server
-SQL Server Integration Server
-SQL Server Analysis Server
-SQL Server Reporting Server
-Microsoft Excel
+- SQL Server Management Server
+- SQL Server Integration Server
+- SQL Server Analysis Server
+- SQL Server Reporting Server
+- Microsoft Excel
 
 ## Features
 - A robust database with views/functions to view and manipulate Order Data for Pandex delivery company
