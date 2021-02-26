@@ -1,5 +1,8 @@
 # Project 2 - Pandex Reports
 ## Project Description
+Pandex is a nationwide food delivery service used by thousands of customers every day. Since the manifestation of global issues stemming from the COVID-19 Pandemic, more and more customers rely on food delivery services like Pandex to stay safe in isolation while enjoying their favorite foods. Business has increased as more people stay home, and we should remain as efficient and competitive as possible in this growing industry.
+
+Pandex does not currently have a singular database from which to track and analyze data, through which sound business decisions can be made regarding the future of the company. We plan to create a database to consolidate and track business-related data for analysis. This data will be aggregated into a data warehouse for analysis. We will analyze this data, noting any positive trends or avenues for improvement, and report our findings to the Pandex board for scrutiny.
 
 
 ## Technologies Used
